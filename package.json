@@ -19,6 +19,6 @@
   "homepage": "https://github.com/1753030/PTUDW-17CLC-Group06#readme",
   "dependencies": {
     "express": "^4.17.1",
-    "handlebars": "^4.5.3"
+    "express-handlebars": "^3.1.0"
   }
 }
