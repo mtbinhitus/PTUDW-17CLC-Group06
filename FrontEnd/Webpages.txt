@@ -1,0 +1,13 @@
+- Homepage: Dung
+- Login page: Dung
+- Register page: Trinh Binh
+- Change-password page: Dung
+- Forget-password page: Dung
+- Search-book page (include borrow/ register to view book function): Mai Binh
+- View-information-of-a-book page (include function to borrow and register to view book): Trinh Binh
+- View-information-of-your-account page (including uploading avatar, update information about yourself if you like): Trinh Binh
+- View-list-of-borrowed-book-of-your-account page (including book-renewal function, give-book-back function): Mai Binh
+
+------> Each member will have a folder named imageXY which contains your images for webpages and a folder named detailXY which contains
+your detail pages if needed (XY are 2 first letter of your first name)
+------> DEADLINE 4p.m Sunday 24/11/2019 (in order to other members give feedbacks and you will fix before real deadline)
