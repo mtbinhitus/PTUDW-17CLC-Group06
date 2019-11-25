@@ -26,7 +26,7 @@ header .login-btn {
 
 .header-body .container {
     padding: 100px 0;
-    background: url(images/bg-home.png);
+    background: url(img/bg-home.png);
 }
 
 .header-body .container .container {
@@ -83,7 +83,7 @@ footer h6 {
     text-align: center;
 }
 
-#login-form input[type=email], input[type=password] {
+#login-form input[type=text], input[type=password] {
     width: 100%;
     padding: 10px 5%;
     margin: 8px 0;
