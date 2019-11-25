@@ -56,9 +56,10 @@
                 <div class="col-2"></div>
                 <div class="col-2">
                     <div class="login-btn">
-                        <a id="username" href="pages/login/login.html" class="btn btn-default" role="button">
+                        <button id="username-btn" class="btn btn-default" 
+                        onclick="document.getElementById('login-form').style.display='block'" style="width:auto;">
                             <i class="fa fa-user" aria-hidden="true"></i> ĐĂNG NHẬP
-                        </a>
+                        </button>
                     </div>
                 </div>
             </div>
@@ -319,5 +320,47 @@
             </div>
         </div>
     </footer>
+
+    <div id="login-form" class="modal">
+        <form class="modal-content animate" action="/action_page.php" method="post">
+            <div class="container">
+                <h2>Account Login</h2>
+                <label for="uname"><b>Username</b></label>
+                <input id="txt-name" type="text" placeholder="Enter Username" name="uname" required>
+                <label for="psw"><b>Password</b></label>
+                <input id="txt-pass" type="password" placeholder="Enter Password" name="psw" required>
+                <label>
+                <input type="checkbox" checked="checked" name="remember"> Remember me
+                </label>
+                <button id="login-btn" type="submit" onclick="updateUser()">Login</button>
+                <p>Forgot <a href="#">Username/Password?</a></p>
+                <p>Create an account? <a href="#">Sign up</a></p>
+            </div>
+        </form>
+    </div>
+
+    <script>
+        var modal = document.getElementById('login-form');
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+
+        function updateUser() {
+            var username = $("#txt-name").val();
+            var password = $("#txt-pass").val();
+            if(username!="" && password!="")
+            {
+                var modal = document.getElementById('login-form');
+                modal.style.display="none";
+                var btn = document.getElementById('username-btn');
+                btn.innerHTML = "<i class=\"fa fa-user\" aria-hidden=\"true\"></i> " + username;
+                btn.removeAttribute('onclick');
+                btn.onclick = "location.href=#";
+            }
+        }
+
+    </script>
 </body>
 </html>
