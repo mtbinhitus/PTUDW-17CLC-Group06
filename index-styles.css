@@ -1,0 +1,80 @@
+
+header {
+    padding: 10px 0;
+}
+
+header .container {
+    border: 2px solid black;
+}
+
+header .logo-title
+{
+    padding-top: 25px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 5%;
+}
+
+header .menu-bar {
+    padding-top: 10px;
+}
+
+header .login-btn {
+    padding-top: 20px;
+}
+
+.header-body .container {
+    padding: 100px 0;
+    background: url(images/bg-home.png);
+}
+
+.header-body .container .container {
+    padding: 0 0;
+}
+
+.header-body .container .container .col-10 {
+    background: #3f72af;
+}
+
+.search-links p {
+    font-weight: bold;
+}
+
+.search-links a {
+    color: white;
+}
+
+.carousel-body, .schedule, .news, .new-books, .book-topics {
+    padding-top: 30px;
+}
+
+.carousel-body img {
+    width: auto; 
+    height: 450px;
+}
+
+.schedule .row {
+    border: 1px solid #A9A9A9;
+}
+
+.schedule .col-2 {
+    background: #E6E6FA;
+}
+
+.news #news-ele, .new-books #news-ele, .book-topics #news-ele {
+    color: black
+}
+
+footer image {
+    border: transparent;
+}
+
+footer {
+    margin-top: 30px;
+    background: #18478B;
+}
+
+footer h6 {
+    color: white;
+}
