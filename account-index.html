@@ -57,10 +57,17 @@
                 <div class="col-2">
                     <div class="login-btn">
                         <div id="dropdown" class="dropdown">
-                        <button id="username-btn" class="btn btn-default" type="button"
-                        onclick="document.getElementById('login-form').style.display='block'" style="width:auto;">
+                        <button id="username-btn" class="btn btn-secondary dropdown-toggle" type="button"
+                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" style="width:auto;">
                             <i class="fa fa-user" aria-hidden="true"></i> ĐĂNG NHẬP
                         </button>
+                        <div id="dropdown-menu" class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Dashboard</a>
+                            <a class="dropdown-item" href="#">Thông tin cá nhân</a>
+                            <a class="dropdown-item" href="#">Sách đã mượn</a>
+                            <a class="dropdown-item" href="pages/change-password/change-password.html">Đổi mật khẩu</a>
+                            <a class="dropdown-item" href="index.html">Đăng xuất</a>
+                        </div>
                         </div>
                     </div>
                 </div>
@@ -323,42 +330,11 @@
         </div>
     </footer>
 
-    <div id="login-form" class="modal">
-        <form class="modal-content animate" action="/action_page.php" method="post">
-            <div class="container">
-                <h2>Đăng nhập</h2>
-                <label for="uname"><b>Tài khoản</b></label>
-                <input id="txt-name" type="text" placeholder="Nhập email" name="uname" required>
-                <label for="psw"><b>Mật khẩu</b></label>
-                <input id="txt-pass" type="password" placeholder="Nhập mật khẩu" name="psw" required>
-                <label>
-                <input type="checkbox" checked="checked" name="remember"> Remember me
-                </label>
-                <button id="login-btn" type="submit" onclick="return updateUser()">Login</button>
-                <p>Quên <a href="#">Tài khoản/ Mật khẩu?</a></p>
-                <p>Tạo tài khoản mới? <a href="#">Đăng ký</a></p>
-            </div>
-        </form>
-    </div>
-
     <script>
-        var modal = document.getElementById('login-form');
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-
-        function updateUser() {
-            var username = $("#txt-name").val();
-            var password = $("#txt-pass").val();
-            if(username!="" && password!="")
-            {
-                localStorage["username"] = username;
-                window.location.href = 'account-index.html';
-                return false;
-            }
-            return true;
+        window.onload = function()
+        {
+            var btn = document.getElementById('username-btn');
+            btn.innerHTML = '<i class="fa fa-user" aria-hidden="true"></i> ' + localStorage["username"];
         }
     </script>
 </body>
