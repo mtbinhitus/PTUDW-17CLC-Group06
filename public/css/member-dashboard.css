@@ -48,3 +48,16 @@ img {
     border: 3px solid blue;
     text-align: center;
 }
+
+footer image {
+    border: transparent;
+}
+
+footer {
+    margin-top: 30px;
+    background: #18478B;
+}
+
+footer h6 {
+    color: white;
+}
