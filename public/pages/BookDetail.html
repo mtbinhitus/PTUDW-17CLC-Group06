@@ -2,71 +2,89 @@
 <html>
     <head>
         <title>Book Detail</title>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel = "icon" href =  "../img/ironMan.ico" type = "image/x-icon"> 
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Changa+One" type="text/css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="../css/BookDetail.css">
     </head>
     <body>
+        <nav aria-label="breadcrumb">
+            <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a href="#">Trang chủ</a></li>
+                <li class="breadcrumb-item"><a href="#">Tìm kiếm</a></li>
+                <li class="breadcrumb-item active" aria-current="page">Xem sách</li>
+            </ol>
+        </nav>
         <div class="container-fluid">
-            <div class ="row" style="background-color:whitesmoke; width: 100% !important; margin: 2% auto;">
+            
+            <div class ="row" style="background-color:whitesmoke; width: 100% !important; margin: 1% auto;">
                 <div class ="col-10">
-                    <div class="row">
+                    <div class="row bookRow">
                         <div class="col-2 picBook">
-                            <img src="../img/Book.jpeg" alt="This is a book" height= "200" width="150">
+                            <img src="../img/Book.jpeg" class="rounded" alt="This is a book" height= "250" width="200">
                         </div>
                         <div class="col-10">
-                            <h3 id="header">HTML & CSS</h3>
+                            <h3 id="header" style="color: lightblue;">HTML & CSS</h3>
                             <div class="detail">
                             <div>
-                                <h5>Author:</h5>
-                                <h5>Published:</h5>
-                                <h5>Pages:</h5>
-                                <h5>Topic:</h5>
-                                <h5>Bookshelf sign:</h5>
+                                <h5>Tác giả:</h5>
+                                <h5>Xuất bản:</h5>
+                                <h5>Mô tả vật lý:</h5>
+                                <h5>Chủ đề:</h5>
+                                <h5>Ký hiệu giá sách:</h5>
                             </div>
                             <div class="info">
-                                <h5><a href="#">------------------</a></h5>
-                                <h5><a href="#">------------------</a></h5>
-                                <h5>------------------tr</h5>
-                                <h5>------------------</h5>
-                                </h5><a href="#">------------------</a></h5>
+                                <h5><a href="#">Trịnh Thái Bình</a></h5>
+                                <h5><a href="#">22.03.1999</a></h5>
+                                <h5>223tr</h5>
+                                <h5>Kĩ nghệ phần mềm</h5>
+                                </h5><a href="#">KNPM</a></h5>
+                                
                             </div>
                         </div>
                         </div>
                     </div>
-                    <div class="row">
-                        <h4 id="header" >Distribution Information</h4>
+                    <div class="row bookRow">
+                        <h3 id="header" style="color: lightblue;" >Thông tin phân phối</h3>
                     </div>
                     <div class="row myRow">
-                        <h6 class="sumbo rounded-pill" style="background-color:lightgreen;">Total: 100</h6>
-                        <h6 class="sumbo" style="background-color:lightblue;">Available: 95</h6>
-                        <h6 class="sumbo" style="background-color: lightsalmon ;">Borrowed: 5</h6>
+                            <span class="badge badge-pill badge-success">Tổng cộng: 100</span>
+                            <span class="badge badge-pill badge-primary">Sẵn có: 95</span>
+                            <span class="badge badge-pill badge-danger">Đã mượn: 5</span>
                     </div>
+                    <div class="listBook">
                     <table class="table">
                         <thead class="thead-light">
                           <tr>
-                            <th scope="col">#</th>
-                            <th scope="col">Status</th>
-                            <th scope="col">Location</th>
+                            <th scope="col">Mã sách</th>
+                            <th scope="col">Tình trạng</th>
+                            <th scope="col">Vị trí</th>
                           </tr>
                         </thead>
                         <tbody>
                           <tr>
                             <th scope="row">1</th>
-                            <td>Borrowed</td>
+                            <td>Đã mượn</td>
                             <td>KHMT1</td>
                           </tr>
                           <tr>
                             <th scope="row">2</th>
-                            <td>Availabel</td>
+                            <td>Sẵn có</td>
                             <td>KHMT1</td>
                           </tr>
                           <tr>
                             <th scope="row">3</th>
-                            <td>Borrowed</td>
+                            <td>Đã mượn</td>
                             <td>KHMT1</td>
                           </tr>
+                          <tr>
+                                <th scope="row">4</th>
+                                <td>Đã mượn</td>
+                                <td>KHMT1</td>
+                            </tr>
+                         
                         </tbody>
                       </table>
                       <nav>
@@ -90,30 +108,76 @@
                           </li>
                         </ul>
                       </nav>
+                    </div>
                 </div>
                 <div class="col-2">
-                    <h3 id="header" style="color: lightblue;">Topic</h3>
+                    <div>
+                    <h3 id="header" style="color: lightblue;">Chủ đề</h3>
                             <ul class="list-group list-group-flush">
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                        Computer Network
+                                            Mạng máy tính
                                       <span class="badge badge-primary badge-pill">14</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                            Computer Science
+                                            Khoa học máy tính
                                       <span class="badge badge-primary badge-pill">2</span>
                                     </li>
                                     <li class="list-group-item d-flex justify-content-between align-items-center">
-                                            Programing
+                                            Lập trình
                                       <span class="badge badge-primary badge-pill">1</span>
                                     </li>
-                                    <li class="list-group-item">Read more</li>
+                                    <li class="list-group-item" style="color: blue;" ><a href="#">Đọc thêm</a></li>
                         </ul>
-                    <h3 id="header" style="color: lightblue;">Most borrowed</h3>
+                    </div>
+                    <div>
+                    <h3 id="header" style="color: lightblue;">Mượn nhiều</h3>
+                    <div class="mostBorrowed">
+                            <div class="card">
+                                <img class="card-img-center" src="../img/Hide-24.png" alt="Card image cap">
+                                <div class="card-body">
+                                    <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                </div>
+                            </div>
+                            <div class="card">
+                                    <img class="card-img-center" src="../img/Hide-24.png" alt="Card image cap">
+                                    <div class="card-body">
+                                        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                    </div>
+                                </div>
+                                <div class="card">
+                                        <img class="card-img-center" src="../img/Hide-24.png" alt="Card image cap">
+                                        <div class="card-body">
+                                            <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                        </div>
+                                    </div>
+                                    <div class="card">
+                                            <img class="card-img-center" src="../img/Hide-24.png" alt="Card image cap">
+                                            <div class="card-body">
+                                                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
+                                            </div>
+                                </div>
+                    </div>
+                </div>
+                <div>
+                    <h3 id="header" style="color: lightblue;">Từ khóa</h3>
+                    <div class ="row">
+                        <button type="button" class="btn btn-light">Tag text</button>
+                        <button type="button" class="btn btn-light">Tag text</button>
+                        <button type="button" class="btn btn-light">Tag text</button>
+                    </div>
+                    <div class ="row">
+                        <button type="button" class="btn btn-light">Tag text</button>
+                        <button type="button" class="btn btn-light">Tag text</button>
+                        <button type="button" class="btn btn-light">Tag text</button>
+                    </div>
+                    <div class ="row">
+                        <button type="button" class="btn btn-light">Tag text</button>
+                        <button type="button" class="btn btn-light">Tag text</button>
+                        <button type="button" class="btn btn-light">Tag text</button>
+                    </div> 
                 </div>
                 </div>
-            <div class = "row myFooter">
-                <img src="../img/footer.png" alt="Footer">
-            </div>
+                </div>
             </div>
         </div>
     </body>
