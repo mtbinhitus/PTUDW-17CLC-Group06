@@ -1,5 +1,6 @@
 body{
     background-color: lightgrey;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
 }
 #header{
     border-bottom: solid lightgrey;
@@ -55,8 +56,14 @@ body{
     align-self: center;
 }
 .btn-light{
-    background-color: lightgrey;
+    background-color: whitesmoke;
 }
 .bookRow{
     padding: 1% 1%;
+}
+.myCol{
+    background-color: lightgrey;
+    margin: 0 0;
+    padding: 0 0;
+    width: 10% !important;
 }
