@@ -1,13 +1,13 @@
 <!DOCTYPE html>
 <html>
     <head>
-        <title>CẤU HÌNH RULE</title>
+        <title>QUẢN LÝ SÁCH ĐÃ MƯỢN</title>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel = "icon" href =  "../img/ironMan.ico" type = "image/x-icon"> 
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Changa+One" type="text/css">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-        <link rel="stylesheet" type="text/css" href="../css/configRule.css">
+        <link rel="stylesheet" type="text/css" href="../css/manageBorrowBook.css">
         <link rel="stylesheet" type="text/css" href="../index-styles.css">
     </head>
     <body>
@@ -69,7 +69,7 @@
             <ol class="breadcrumb">
                 <li class="breadcrumb-item"><a href="../index.html">Trang chủ</a></li>
                 <li class="breadcrumb-item"><a href="#">Tài khoản admin</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Cấu hình rule</li>
+                <li class="breadcrumb-item active" aria-current="page">Quản lý sách đã mượn</li>
             </ol>
         </nav>
         <div class="dash">
@@ -137,26 +137,116 @@
               <button type="button" class="btn btn-primary" style="width: 12.4%;" >Đổi mật khẩu</button> 
         </div>
         <div class="container-fluid">
-            <h3 id="header">CẤU HÌNH RULE</h3>
-            <div class="boxConfig">
-                <h5 style=" border-bottom: solid rgb(228, 227, 227); padding: 1% 1%;">Thông tin cấu hình</h5>
-                <div style="margin-top: 3%;">
-                    <label>Số ngày mượn tối đa</label>
-                    <input class="form-control" type="number" id="MaxDays" placeholder="Số ngày mượn tối đa" required>
+            <h3 id="header">QUẢN LÝ SÁCH ĐÃ MƯỢN</h3>
+            <div class="boxBook">
+                <h5 style=" border-bottom: solid rgb(228, 227, 227); color: rgb(45, 199, 250); padding: 1% 1%; background-color: rgb(178, 223, 250);">Danh sách sách đã mượn</h5>
+                <div style="padding: 1% 2%; display: flex; flex-direction: row; justify-content: center;">
+                    <div class="input-group mb-3" style="width: 70%; padding: 0 1%;">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">
+                              <img src="/public/img/icons8-search-24.png" alt="search">
+                          </span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Search" id="Search">
+                    </div>   
                 </div>
-                <div style="margin-top: 2%;">
-                    <label>Số ngày gia hạn tối đa</label>
-                    <input class="form-control" type="number" id="MaxExtension" placeholder="Số ngày gia hạn tối đa"required>
-                </div>
-                <div style="margin-top: 2%;">
-                    <label>Số sách mượn tối đa</label>
-                    <input class="form-control" type="number" id="MaxBooks" placeholder="Số sách mượn tối đa" required>
-                </div>
-                <div style="margin-top: 2%;">
-                    <label>Chương trình</label>
-                    <input class="form-control" type="text" id="Program" placeholder="Chương trình" required>
-                </div>
-                <button class="btn btn-primary w-25" id="but" type="submit" style="margin-top: 1%">CẤU HÌNH</button>
+                <div class="info">
+                    <div class="row myRow">
+                        <div class="col-6">
+                            <input class="form-control" type="text" id="title" required>
+                            <input class="form-control" style="margin-top: 2% ;" type="text" id="author" required>
+                            <input class="form-control" style="margin-top: 2% ;" type="text" id="topic" required>
+                        </div>
+                        <div class="col-6">
+                            <select class="custom-select" id="inputGroupSelect01" >
+                                <option selected value="1">Tiêu đề</option>
+                                <option value="2">Tác giả</option>
+                                <option value="3">Chủ đề</option>
+                              </select>
+                              <select class="custom-select" id="inputGroupSelect02"  style="margin-top: 2% ;">
+                                <option value="1">Tiêu đề</option>
+                                <option selected value="2">Tác giả</option>
+                                <option value="3">Chủ đề</option>
+                              </select>
+                              <select class="custom-select" id="inputGroupSelect03" style="margin-top: 2% ;">
+                                <option value="1">Tiêu đề</option>
+                                <option value="2">Tác giả</option>
+                                <option selected value="3">Chủ đề</option>
+                              </select>  
+                        </div>
+                    </div>
+                    <div class="row myRow">
+                            <table class="table" style="margin-top: 2%;">
+                                <thead class="thead-light">
+                                  <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Người mượn</th>
+                                    <th scope="col">ISBN</th>
+                                    <th scope="col">Tên sách</th>
+                                    <th scope="col">Ngày mượn</th>
+                                    <th scope="col">Ngày trả</th>
+                                    <th scope="col">Hành động</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <th scope="row">1</th>
+                                    <td>Trịnh Thái Bình</td>
+                                    <td>2222</td>
+                                    <td>Cơ sở trí tuệ nhân tạo</td>
+                                    <td>2019-27-11 00:05:25</td>
+                                    <td>2019-27-11</td>
+                                    <td>
+                                        <button type="button" class="btn btn-primary">Chỉnh sửa</button>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">2</th>
+                                    <td>Trịnh Thái Bình</td>
+                                    <td>2319</td>
+                                    <td>Cơ sở dữ liệu</td>
+                                    <td>2019-27-11 00:05:25</td>
+                                    <td>2019-27-11</td>
+                                    <td>
+                                        <button type="button" class="btn btn-primary">Chỉnh sửa</button>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">3</th>
+                                    <td>Trịnh Thái Bình</td>
+                                    <td>0000</td>
+                                    <td>Hệ quản trị cơ sở dữ liệu</td>
+                                    <td>2019-27-11 00:05:25</td>
+                                    <td>2019-27-11</td>
+                                    <td>
+                                        <button type="button" class="btn btn-primary">Chỉnh sửa</button>
+                                    </td>
+                                  </tr> 
+                                </tbody>
+                              </table>
+                              <nav>
+                                <ul class="pagination">
+                                  <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1" aria-label="Previous" aria-disabled="true">
+                                      <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                  </li>
+                                  <li class="page-item active" aria-current="page">
+                                    <a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
+                                  </li>
+                                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                  <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                  <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                  <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                      <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                  </li>
+                                </ul>
+                              </nav>
+                    </div>
+                </div>  
             </div>
         </div>
         <footer style="margin-top:1%;">
