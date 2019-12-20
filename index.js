@@ -12,7 +12,14 @@ app.engine('hbs', hbs({
     partialsDir: __dirname + '/views/partials',
     defaultLayout: 'layout'
 }));
+
+app.set('views', __dirname + '/views');
 app.set('view engine', 'hbs');
+
+app.get("/", (req, res) => {
+    let css = "index-styles.css";
+    res.render('index', {css: css});
+});
 
 // start server
 app.set('port', process.env.PORT || 3000);
