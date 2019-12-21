@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>FIT Library Web</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/register-request-offline.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+        <header>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="menu-bar">
+                                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                                    <a class="navbar-brand" href="#">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-5">
+                                                    <image id="logo-image" src="../img/logo-fit.jpg" alt="logo">
+                                                </div>
+                                                <div class="col-7 logo-title">
+                                                    <p>KHOA CÔNG NGHỆ THÔNG TIN</p>
+                                                    <p>TRƯỜNG ĐẠI HỌC KHOA HỌC TỰ NHIÊN</p>
+                                                    <p>THƯ VIỆN</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                                </button>
+        
+                                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                  <ul class="navbar-nav mr-auto">
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="#">Trang chủ <span class="sr-only">(current)</span></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Dịch vụ </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Tìm sách </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Liên hệ </a>
+                                    </li>
+                                    </ul>
+                                    <form class="form-inline">
+                                        <button id="username-btn" class="btn btn-default" type="button"
+                                            onclick="location.href='pages/login.html'" style="width:auto;">
+                                            <i class="fa fa-user" aria-hidden="true"></i> ĐĂNG NHẬP
+                                        </button>
+                                    </form>
+                                </div>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+    <div class="page-address">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p><i class="fa fa-home"></i> <a href="../../account-index.html"> Trang chủ \ </a>
+                    <a href="#"> Tài khoản admin \ </a> <a class="active" href="#"> Yêu cầu đăng ký offline</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>YÊU CẦU ĐĂNG KÝ OFFLINE</h1>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1"></div>
+                <div class="col-10">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12 title">
+                                <h5>Thông tin độc giả</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <label>Email:</label>
+                                <input class="form-control" type="email" id="inputEmail" placeholder="11111111@student.hcmus.edu.vn" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <label>Họ tên:</label>
+                                <input class="form-control" type="text" id="inputName" placeholder="Nguyễn Văn A" required>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <label>Khoa:</label>
+                                <select class="custom-select">
+                                    <option selected>Open this select menu</option>
+                                    <option value="1">Công nghệ thông tin</option>
+                                    <option value="2">Hóa</option>
+                                    <option value="3">Vật lý</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <label>Chương trình:</label>
+                                <select class="custom-select">
+                                    <option selected>Open this select menu</option>
+                                    <option value="1">Chất lượng cao</option>
+                                    <option value="2">Đại trà</option>
+                                    <option value="3">Giảng viên</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <button id="submit-btn" type="submit" class="btn btn-primary">Duyệt yêu cầu</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-1"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <image class="img-fluid" src="../img/footer.png" alt="logo"></image>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 d-flex justify-content-center">
+                        <h6><b>&copy; COPY RIGHT FIT-HCMUS LIBRARY. THIẾT KẾ BỞI NHÓM 06 MÔN LTUDW</b></h6>
+                    </div>
+                </div>
+            </div>
+        </footer>
+</body>
+</html>

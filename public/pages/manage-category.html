@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>FIT Library Web</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="../css/manage-category.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+        <header>
+                <div class="container">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="menu-bar">
+                                <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                                    <a class="navbar-brand" href="#">
+                                        <div class="container">
+                                            <div class="row">
+                                                <div class="col-5">
+                                                    <image id="logo-image" src="../img/logo-fit.jpg" alt="logo">
+                                                </div>
+                                                <div class="col-7 logo-title">
+                                                    <p>KHOA CÔNG NGHỆ THÔNG TIN</p>
+                                                    <p>TRƯỜNG ĐẠI HỌC KHOA HỌC TỰ NHIÊN</p>
+                                                    <p>THƯ VIỆN</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                                    aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                                </button>
+        
+                                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                                  <ul class="navbar-nav mr-auto">
+                                    <li class="nav-item active">
+                                        <a class="nav-link" href="#">Trang chủ <span class="sr-only">(current)</span></a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Dịch vụ </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Tìm sách </a>
+                                    </li>
+                                    <li class="nav-item">
+                                        <a class="nav-link" href="#">Liên hệ </a>
+                                    </li>
+                                    </ul>
+                                    <form class="form-inline">
+                                        <button id="username-btn" class="btn btn-default" type="button"
+                                            onclick="location.href='pages/login.html'" style="width:auto;">
+                                            <i class="fa fa-user" aria-hidden="true"></i> ĐĂNG NHẬP
+                                        </button>
+                                    </form>
+                                </div>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </header>
+
+    <div class="page-address">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <p><i class="fa fa-home"></i> <a href="../../account-index.html"> Trang chủ \ </a>
+                    <a href="#"> Tài khoản admin \ </a> <a class="active" href="#"> Quản lý chủ đề</a></p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="content">
+        <div class="container">
+            <div class="row">
+                <div class="col-12">
+                    <h1>QUẢN LÝ CHỦ ĐỀ</h1>
+                    <hr>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-1"></div>
+                <div class="col-10">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-12 title">
+                                <h5>Danh sách chủ đề</h5>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-7"></div>
+                            <div class="col-4">
+                                <div class="form-group row">
+                                    <label class="col-3 col-form-label">Search:</label>
+                                    <div class="col-9">
+                                        <input type="text" class="form-control" id="inputSearch">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-1"></div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <table class="table">
+                                    <thead>
+                                        <tr>
+                                            <th scope="col">#</th>
+                                            <th scope="col">Chủ đề</th>
+                                            <th scope="col">Ngày tạo</th>
+                                            <th scope="col">Hành động</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <th scope="row">1</th>
+                                            <td>Mạng máy tính</td>
+                                            <td>2019-27-11</td>
+                                            <td>
+                                                <button id="edit-btn" type="btn btn-default">Chỉnh sửa</button>
+                                                <button id="delete-btn" type="btn btn-default">Xóa</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">2</th>
+                                            <td>Mạng máy tính</td>
+                                            <td>2019-27-11</td>
+                                            <td>
+                                                <button id="edit-btn" type="btn btn-default">Chỉnh sửa</button>
+                                                <button id="delete-btn" type="btn btn-default">Xóa</button>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <th scope="row">3</th>
+                                            <td>Mạng máy tính</td>
+                                            <td>2019-27-11</td>
+                                            <td>
+                                                <button id="edit-btn" type="btn btn-default">Chỉnh sửa</button>
+                                                <button id="delete-btn" type="btn btn-default">Xóa</button>
+                                            </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-12">
+                                <nav aria-label="Page navigation example">
+                                    <ul class="pagination">
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                            <span class="sr-only">Previous</span>
+                                        </a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                            <span class="sr-only">Next</span>
+                                        </a>
+                                    </li>
+                                    </ul>
+                                </nav>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-1"></div>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <image class="img-fluid" src="../img/footer.png" alt="logo"></image>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-12 d-flex justify-content-center">
+                        <h6><b>&copy; COPY RIGHT FIT-HCMUS LIBRARY. THIẾT KẾ BỞI NHÓM 06 MÔN LTUDW</b></h6>
+                    </div>
+                </div>
+            </div>
+        </footer>
+</body>
+</html>
