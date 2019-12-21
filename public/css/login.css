@@ -1,6 +1,10 @@
-.row {
+.row{
     height: 100%;
     margin: 10% auto;
+}
+
+.btn-outline-light{
+    border-color: lightgray;
 }
 
 .info{
@@ -12,6 +16,6 @@
     justify-content: space-around;
 }
 
-#confirm-btn {
-    width: 50%;
+#login-btn, #register-btn {
+    width: 100%;
 }

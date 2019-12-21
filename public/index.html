@@ -15,21 +15,23 @@
     <header>
         <div class="container">
             <div class="row">
-                <div class="col-1">
-                    <div class="logo">
-                        <image class="img-fluid" src="img/logo-fit.jpg" alt="logo">
-                    </div>
-                </div>
-                <div class="col-3">
-                    <div class="logo-title">
-                        <p>KHOA CÔNG NGHỆ THÔNG TIN</p>
-                        <p>TRƯỜNG ĐẠI HỌC KHOA HỌC TỰ NHIÊN</p>
-                        <p>THƯ VIỆN</p>
-                    </div>
-                </div>
-                <div class="col-4">
+                <div class="col-12">
                     <div class="menu-bar">
                         <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                            <a class="navbar-brand" href="#">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-5">
+                                            <image id="logo-image" src="img/logo-fit.jpg" alt="logo">
+                                        </div>
+                                        <div class="col-7 logo-title">
+                                            <p>KHOA CÔNG NGHỆ THÔNG TIN</p>
+                                            <p>TRƯỜNG ĐẠI HỌC KHOA HỌC TỰ NHIÊN</p>
+                                            <p>THƯ VIỆN</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </a>
                         <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
                             aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                         <span class="navbar-toggler-icon"></span>
@@ -38,7 +40,7 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                           <ul class="navbar-nav mr-auto">
                             <li class="nav-item active">
-                                <a class="nav-link" href="index.html">Trang chủ <span class="sr-only">(current)</span></a>
+                                <a class="nav-link" href="#">Trang chủ <span class="sr-only">(current)</span></a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Dịch vụ </a>
@@ -49,22 +51,19 @@
                             <li class="nav-item">
                                 <a class="nav-link" href="#">Liên hệ </a>
                             </li>
-                            </div>
+                            </ul>
+                            <form class="form-inline">
+                                <button id="username-btn" class="btn btn-default" type="button"
+                                    onclick="location.href='pages/login.html'" style="width:auto;">
+                                    <i class="fa fa-user" aria-hidden="true"></i> ĐĂNG NHẬP
+                                </button>
+                            </form>
+                        </div>
                         </nav>
                     </div>
                 </div>
-                <div class="col-2"></div>
-                <div class="col-2">
-                    <div class="login-btn">
-                        <div id="dropdown" class="dropdown">
-                        <button id="username-btn" class="btn btn-default" type="button"
-                        onclick="document.getElementById('login-form').style.display='block'" style="width:auto;">
-                            <i class="fa fa-user" aria-hidden="true"></i> ĐĂNG NHẬP
-                        </button>
-                        </div>
-                    </div>
-                </div>
             </div>
+        </div>
     </header>
 
     <div class="header-body">
@@ -340,26 +339,5 @@
             </div>
         </form>
     </div>
-
-    <script>
-        var modal = document.getElementById('login-form');
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-
-        function updateUser() {
-            var username = $("#txt-name").val();
-            var password = $("#txt-pass").val();
-            if(username!="" && password!="")
-            {
-                localStorage.setItem('username', username);
-                window.location.href = 'account-index.html';
-                return false;
-            }
-            return true;
-        }
-    </script>
 </body>
 </html>
