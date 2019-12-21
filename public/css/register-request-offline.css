@@ -1,0 +1,79 @@
+header {
+    padding: 10px 0;
+}
+
+header .container {
+    border: 2px solid black;
+}
+
+#logo-image {
+    height: 100px;
+    width: 150px;
+}
+
+header .logo-title
+{
+    padding-top: 25px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 5%;
+}
+
+header .menu-bar {
+    padding-top: 10px;
+}
+
+header .login-btn {
+    padding-top: 20px;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid black;
+    margin: 1em 0;
+    padding: 0;
+}
+
+.content .container .container-fluid {
+    border: 1px solid #36098b;
+}
+
+.content .container .container-fluid h5 {
+    color: #36098b;
+}
+
+.content .container .container-fluid .title {
+    background: #D9E3EF ;
+}
+
+#submit-btn {
+    margin-left: 2%;
+}
+
+.content .container .container-fluid .row {
+    margin: 2% 0;
+}
+
+a.active {
+    color: gray;
+}
+
+footer image {
+    border: transparent;
+}
+
+footer .container {
+    background: #18478B;
+}
+
+footer {
+    clear: both;
+    margin-top: 30px;
+}
+
+footer h6 {
+    color: white;
+}
