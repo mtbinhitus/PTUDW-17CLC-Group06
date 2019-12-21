@@ -21,6 +21,15 @@ var hbs = expressHbs.create({
 app.engine('hbs', hbs.engine);
 app.set('view engine', 'hbs');
 
+// Create database
+var models = require('./models');
+app.get('/sync', function(req, res){
+	models.sequelize.sync().then(function(){
+		res.send('database sync completed!');
+	});
+});
+
+
 // Define your routes here
 // Homepage
 app.get("/", (req, res) => {
