@@ -3,7 +3,7 @@ var express = require('express');
 var app = express();
 
 // Setup static path use css and image
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname));
 
 // Setup handlebars
 // Use View Engine
@@ -24,7 +24,7 @@ app.set('view engine', 'hbs');
 // Define your routes here
 // Homepage
 app.get("/", (req, res) => {
-    let css = "index-styles.css";
+    let css = "./public/index-styles.css";
     res.render('index', {css: css});
 });
 
