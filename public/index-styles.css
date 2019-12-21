@@ -77,52 +77,12 @@ footer image {
 
 footer {
     margin-top: 30px;
+}
+
+footer .container {
     background: #18478B;
 }
 
 footer h6 {
     color: white;
-}
-
-#login-form h2, #login-form p {
-    text-align: center;
-}
-
-#login-form input[type=text], input[type=password] {
-    width: 100%;
-    padding: 10px 5%;
-    margin: 8px 0;
-    display: inline-block;
-    border: 1px solid #ccc;
-    box-sizing: border-box;
-}
-
-#login-form input[checkbox], #login-btn {
-    display: block;
-    margin-bottom: 10px;
-}
-
-#login-form .container {
-    padding: 5% 30%;
-}
-
-.modal {
-    display: none; 
-    position: fixed; 
-    z-index: 1;
-    left: 0;
-    top: 0;
-    width: 100%; 
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4);
-    padding-top: 100px;
-}
-  
-#login-form .modal-content {
-    background-color: #fefefe;
-    margin: 4% 28% 15% 28%;
-    border: 1px solid #888;
-    width: 44%;
 }

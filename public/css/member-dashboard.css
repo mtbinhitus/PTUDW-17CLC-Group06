@@ -6,6 +6,11 @@ header .container {
     border: 2px solid black;
 }
 
+#logo-image {
+    height: 100px;
+    width: 150px;
+}
+
 header .logo-title
 {
     padding-top: 25px;
@@ -36,7 +41,7 @@ a.active {
     color: gray;
 }
 
-img {
+#book-icon {
     width: 70px;
     height: 70px;
     float: left;
@@ -53,9 +58,13 @@ footer image {
     border: transparent;
 }
 
-footer {
-    margin-top: 30px;
+footer .container {
     background: #18478B;
+}
+
+footer {
+    clear: both;
+    margin-top: 30px;
 }
 
 footer h6 {
