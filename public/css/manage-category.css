@@ -49,8 +49,14 @@ hr {
     background: #D9E3EF ;
 }
 
-.content .container .container-fluid .row {
-    margin: 2% 0;
+#edit-btn {
+    color: white;
+    background: #0177DB;
+}
+
+#delete-btn {
+    color: white;
+    background: #D65049;
 }
 
 a.active {
