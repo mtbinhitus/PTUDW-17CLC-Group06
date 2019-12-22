@@ -37,6 +37,11 @@ app.get("/", (req, res) => {
     res.render('index', {css: css});
 });
 
+app.get("/search", (req, res) => {
+	let css = "./public/css/search.css";
+	res.render('search', {css: css});
+});
+
 // Set Server Port & Start Server
 app.set('port', (process.env.PORT || 3000));
 

@@ -1,0 +1,155 @@
+<div class="container">
+    <nav aria-label="breadcrumb">
+        <ol class="breadcrumb">
+            <li class="breadcrumb-item"><a href="/">Trang chủ</a></li>
+            <li class="breadcrumb-item active" aria-current="page">Tìm kiếm</li>
+        </ol>
+    </nav>
+</div>
+
+<div class="container-content">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-9 content1">
+                <h3>TRA CỨU SÁCH TRỰC TUYẾN</h3>
+                <hr>
+                <div class="form-group form-row">
+                    <select class="col-md-2 form-control" id="select-search">
+                        <option>Tiêu đề</option>
+                        <option>Tác giả</option>
+                        <option>Chủ đề</option>
+                        <option>ISBN</option>
+                        <option>Nhà xuất bản</option>
+                        <option>Bất kỳ</option>
+                    </select>
+                    <input class="col-md-7 form-control" type="text" placeholder="Tên sách">
+                    <button type="submit" class="btn btn-primary col-md-2">Tìm kiếm
+                        <i class="fas fa-search" aria-hidden="true"></i>
+                    </button>
+                    <button class="btn btn-primary col-md-1">
+                        <i class="fas fa-filter"></i>
+                    </button>
+                </div>
+
+                <div class="borrow-card">
+                    <label for="">Số sách được chọn: </label>
+                    <button>
+                        <i class="fas fa-shopping-cart"></i>
+                    </button>
+                    <button type="submit" class="btn-borrow btn-primary col-md-2"> Đăng kí mượn </button>
+                </div>
+
+                <table class="table">
+                    <thead class="thead-light">
+                        <tr>
+                            <th scope="col">#</th>
+                            <th scope="col">Tên sách</th>
+                            <th scope="col">Tác giả</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <th scope="row">1</th>
+                            <td>Đã mượn</td>
+                            <td>KHMT1</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">2</th>
+                            <td>Sẵn có</td>
+                            <td>KHMT1</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">3</th>
+                            <td>Đã mượn</td>
+                            <td>KHMT1</td>
+                        </tr>
+                        <tr>
+                            <th scope="row">4</th>
+                            <td>Đã mượn</td>
+                            <td>KHMT1</td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <nav>
+                    <ul class="pagination">
+                        <li class="page-item disabled">
+                            <a class="page-link" href="#" tabindex="-1" aria-label="Previous" aria-disabled="true">
+                                <span aria-hidden="true">&laquo;</span>
+                            </a>
+                        </li>
+                        <li class="page-item active" aria-current="page">
+                            <a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
+                        </li>
+                        <li class="page-item"><a class="page-link" href="#">2</a></li>
+                        <li class="page-item"><a class="page-link" href="#">3</a></li>
+                        <li class="page-item"><a class="page-link" href="#">4</a></li>
+                        <li class="page-item"><a class="page-link" href="#">5</a></li>
+                        <li class="page-item">
+                            <a class="page-link" href="#" aria-label="Next">
+                                <span aria-hidden="true">&raquo;</span>
+                            </a>
+                        </li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="col-md-3 content2">
+                <div class="container-left">
+                    <h3 id="header" style="color: lightblue; border-bottom: none; margin: 0 auto;">Chủ đề</h3>
+                    <ul class="list-group list-group-flush">
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Mạng máy tính
+                            <span class="badge badge-primary badge-pill">14</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Khoa học máy tính
+                            <span class="badge badge-primary badge-pill">2</span>
+                        </li>
+                        <li class="list-group-item d-flex justify-content-between align-items-center">
+                            Lập trình
+                            <span class="badge badge-primary badge-pill">1</span>
+                        </li>
+                        <li class="list-group-item" style="color: blue;"><a href="#">Đọc thêm</a></li>
+                    </ul>
+                </div>
+                <div class="container-left">
+                    <h3 id="header" style="color: lightblue;">Mượn nhiều</h3>
+                    <div class="mostBorrowed">
+                        <div class="card">
+                            <img class="card-img-center" src="public/img/Hide-24.png" alt="Card image cap">
+                            <div class="card-body">
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk
+                                    of the card's content.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img class="card-img-center" src="public/img/Hide-24.png" alt="Card image cap">
+                            <div class="card-body">
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk
+                                    of the card's content.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img class="card-img-center" src="public/img/Hide-24.png" alt="Card image cap">
+                            <div class="card-body">
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk
+                                    of the card's content.</p>
+                            </div>
+                        </div>
+                        <div class="card">
+                            <img class="card-img-center" src="public/img/Hide-24.png" alt="Card image cap">
+                            <div class="card-body">
+                                <p class="card-text">Some quick example text to build on the card title and make up the
+                                    bulk
+                                    of the card's content.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
