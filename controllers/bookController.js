@@ -8,11 +8,11 @@ controller.getAll = (query) => {
     let options = {
         attributes: ['id', 'title',]
     };
-    if(query.limit > 0)
-    {
-        options.limit = query.limit;
-        options.offset = query.limit * (query.page - 1);
-    }
+    // if(query.limit > 0)
+    // {
+    //     options.limit = query.limit;
+    //     options.offset = query.limit * (query.page - 1);
+    // }
 
     return new Promise((resolve, reject) => {
         Book
