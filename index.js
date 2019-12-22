@@ -37,6 +37,30 @@ app.get("/", (req, res) => {
     res.render('index', {css: css});
 });
 
+// Login
+app.get("/login", (req, res) => {
+	let css = "./public/css/login.css";
+	res.render('login', {css: css, layout: 'layout1.hbs'});
+});
+
+// Change password
+app.get("/changepassword", (req, res) => {
+	let css = "./public/css/change-password.css";
+	res.render('changepassword', {css: css, layout: 'layout1.hbs'});
+});
+
+// Forget password
+app.get("/forgetpassword", (req, res) => {
+	let css = "./public/css/forget-password.css";
+	res.render('forgetpassword', {css: css, layout: 'layout1.hbs'});
+});
+
+// Register
+app.get("/register", (req, res) => {
+	let css = "./public/css/Resigter.css";
+	res.render('register', {css: css, layout: 'layout1.hbs'});
+});
+
 // Search page
 app.get("/search", (req, res) => {
 	let css = "./public/css/search.css";

@@ -1,0 +1,128 @@
+  <div class="page-address">
+            <div class="container">
+                <div class="row">
+                    <div class="col-12">
+                        <p><i class="fa fa-home"></i> <a href="../../account-index.html"> Trang chủ \ </a>
+                        <a href="#"> Tài khoản admin \ </a> <a class="active" href="#"> Quản lý sách đã mượn</a></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid"style="width:80%">
+            <div class="row" style="margin: 1% auto">
+              <div class="col-12" style="padding-left:40px; padding-right:40px;">
+                  <h1>QUẢN LÝ SÁCH ĐÃ MƯỢN</h1>
+                  <hr>
+              </div>
+          </div>
+            <div class="boxBook">
+                <h5 style=" border-bottom: solid rgb(228, 227, 227); color: rgb(45, 199, 250); padding: 1% 1%; background-color: rgb(178, 223, 250);">Danh sách sách đã mượn</h5>
+                <div style="padding: 1% 2%; display: flex; flex-direction: row; justify-content: center;">
+                    <div class="input-group mb-3" style="width: 90%; padding: 0 1%;">
+                        <div class="input-group-prepend">
+                          <span class="input-group-text">
+                              <img src="/public/img/icons8-search-24.png" alt="search">
+                          </span>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Search" id="Search">
+                    </div>   
+                </div>
+                <div class="info">
+                    <div class="row myRow">
+                        <div class="col-6">
+                            <input class="form-control" type="text" id="title" required>
+                            <input class="form-control" style="margin-top: 2% ;" type="text" id="author" required>
+                            <input class="form-control" style="margin-top: 2% ;" type="text" id="topic" required>
+                        </div>
+                        <div class="col-6">
+                            <select class="custom-select" id="inputGroupSelect01" >
+                                <option selected value="1">Tiêu đề</option>
+                                <option value="2">Tác giả</option>
+                                <option value="3">Chủ đề</option>
+                              </select>
+                              <select class="custom-select" id="inputGroupSelect02"  style="margin-top: 2% ;">
+                                <option value="1">Tiêu đề</option>
+                                <option selected value="2">Tác giả</option>
+                                <option value="3">Chủ đề</option>
+                              </select>
+                              <select class="custom-select" id="inputGroupSelect03" style="margin-top: 2% ;">
+                                <option value="1">Tiêu đề</option>
+                                <option value="2">Tác giả</option>
+                                <option selected value="3">Chủ đề</option>
+                              </select>  
+                        </div>
+                    </div>
+                    <div class="row myRow">
+                            <table class="table" style="margin-top: 2%;">
+                                <thead class="thead-light">
+                                  <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col">Người mượn</th>
+                                    <th scope="col">ISBN</th>
+                                    <th scope="col">Tên sách</th>
+                                    <th scope="col">Ngày mượn</th>
+                                    <th scope="col">Ngày trả</th>
+                                    <th scope="col">Hành động</th>
+                                  </tr>
+                                </thead>
+                                <tbody>
+                                  <tr>
+                                    <th scope="row">1</th>
+                                    <td>Trịnh Thái Bình</td>
+                                    <td>2222</td>
+                                    <td>Cơ sở trí tuệ nhân tạo</td>
+                                    <td>2019-27-11 00:05:25</td>
+                                    <td>2019-27-11</td>
+                                    <td>
+                                        <button type="button" class="btn btn-primary">Chỉnh sửa</button>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">2</th>
+                                    <td>Trịnh Thái Bình</td>
+                                    <td>2319</td>
+                                    <td>Cơ sở dữ liệu</td>
+                                    <td>2019-27-11 00:05:25</td>
+                                    <td>2019-27-11</td>
+                                    <td>
+                                        <button type="button" class="btn btn-primary">Chỉnh sửa</button>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <th scope="row">3</th>
+                                    <td>Trịnh Thái Bình</td>
+                                    <td>0000</td>
+                                    <td>Hệ quản trị cơ sở dữ liệu</td>
+                                    <td>2019-27-11 00:05:25</td>
+                                    <td>2019-27-11</td>
+                                    <td>
+                                        <button type="button" class="btn btn-primary">Chỉnh sửa</button>
+                                    </td>
+                                  </tr> 
+                                </tbody>
+                              </table>
+                              <nav>
+                                <ul class="pagination">
+                                  <li class="page-item disabled">
+                                    <a class="page-link" href="#" tabindex="-1" aria-label="Previous" aria-disabled="true">
+                                      <span aria-hidden="true">&laquo;</span>
+                                    </a>
+                                  </li>
+                                  <li class="page-item active" aria-current="page">
+                                    <a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
+                                  </li>
+                                  <li class="page-item"><a class="page-link" href="#">2</a></li>
+                                  <li class="page-item"><a class="page-link" href="#">3</a></li>
+                                  <li class="page-item"><a class="page-link" href="#">4</a></li>
+                                  <li class="page-item"><a class="page-link" href="#">5</a></li>
+                                  <li class="page-item">
+                                    <a class="page-link" href="#" aria-label="Next">
+                                      <span aria-hidden="true">&raquo;</span>
+                                    </a>
+                                  </li>
+                                </ul>
+                              </nav>
+                    </div>
+                </div>  
+            </div>
+        </div>

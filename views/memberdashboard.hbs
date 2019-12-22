@@ -1,14 +1,3 @@
-    <div class="page-address">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <p><i class="fa fa-home"></i> <a href="/"> Trang chủ \ </a>
-                    <a href="#"> Tài khoản member \ </a> <a class="active" href="#"> Dashboard</a></p>
-                </div>
-            </div>
-        </div>
-    </div>
-
     <div class="page-dashboard">
         <div class="container">
             <div class="row">
@@ -25,13 +14,13 @@
             <div class="row">
                 <div class="col-2"></div>
                 <div class="col-3 frame">
-                    <img src="public/img/book-icon1.png" alt="book icon">
+                    <img src="../img/book-icon1.png" id="book-icon" alt="book icon">
                     <p>Số sách đã mượn</p>
                     <h5>5</h5>
                 </div>
                 <div class="col-2"></div>
                 <div class="col-3 frame">
-                    <img src="public/img/book-icon2.png" alt="book icon">
+                    <img src="../img/book-icon2.png" id="book-icon" alt="book icon">
                     <p>Số sách chưa trả</p>
                     <h5>2</h5>
                 </div>
@@ -39,3 +28,27 @@
             </div>
         </div>
     </div>
+
+    <span id="menu-btn" style="font-size:30px; cursor:pointer" onclick="openNav()">&#9776; Menu</span>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="/memberdashboard">Dashboard</a>
+        <a href="/accountinfo">Thông tin cá nhân</a>
+        <a href="public/pages/change-password.html">Đổi mật khẩu</a>
+        <a href="/membermanagebook">Sách đang mượn</a>
+    </div>
+
+    <script>
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.marginLeft = "250px";
+            document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+        }
+            
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginLeft= "0";
+            document.body.style.backgroundColor = "white";
+        }
+    </script>
