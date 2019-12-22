@@ -11,8 +11,9 @@ module.exports = (sequelize, DataTypes) => {
     isbn10: DataTypes.STRING,
     title: DataTypes.STRING,
     edition: DataTypes.INTEGER,
-    pubYear: DataTypes.DATE,
+    pubYear: DataTypes.INTEGER,
     publisher: DataTypes.STRING,
+    haveCD: DataTypes.BOOLEAN,
     amount: DataTypes.INTEGER
   }, {});
   Book.associate = function(models) {

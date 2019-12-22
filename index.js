@@ -91,6 +91,11 @@ app.get("/BookDetail/:id", (req, res) => {
 	})
 	.catch(error => next(error));
 });
+// Account info
+app.get("/accountinfo", (req, res) => {
+	let css = "./public/css/account-info.css";
+	res.render('accountinfo', {css: css});
+})
 
 // MEMBER
 // Manage book
