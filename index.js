@@ -33,8 +33,14 @@ app.get('/sync', function(req, res){
 // Define your routes here
 // Homepage
 app.get("/", (req, res) => {
-    let css = "./public/index-styles.css";
-    res.render('index', {css: css});
+	let css = "./public/index-styles.css";
+	let bookController = require('./controllers/bookController');
+	bookController.getAll().then( data => {
+		res.locals.books = data.rows;
+		res.render('index', {css: css});
+	}).catch( err => {
+		next(err);
+	})
 });
 
 // Login
