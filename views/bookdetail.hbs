@@ -13,26 +13,28 @@
                 <div class ="col-9" style="background-color: white; padding-bottom: 0.5%; border-radius: 15px; margin-left: 4%;">
                     <div class="row bookRow justify-content-around">
                         <div class="col-2 picBook">
-                            <img src="img/Book.jpeg" class="rounded" alt="This is a book" height= "250" width="200">
+                            <img src="/public/img/Book.jpeg" class="rounded" alt="This is a book" height= "250" width="200">
                         </div>
+                        {{#with book}}
                         <div class="col-9">
-                            <h3 id="header" style="color: lightblue;">HTML & CSS</h3>
+                            <h3 id="header" style="color: lightblue;">{{ title }}</h3>
                             <div class="detail">
                             <div>
                                 <h5>Tác giả:</h5>
-                                <h5>Xuất bản:</h5>
-                                <h5>Mô tả vật lý:</h5>
+                                <h5>Nhà xuất bản:</h5>
+                                <h5>Ngày xuất bản:</h5>
                                 <h5>Chủ đề:</h5>
                                 <h5>Ký hiệu giá sách:</h5>
                             </div>
                             <div class="info">
                                 <h5><a href="#">Trịnh Thái Bình</a></h5>
-                                <h5><a href="#">22.03.1999</a></h5>
-                                <h5>223tr</h5>
+                                <h5><a href="#">{{ publisher }}</a></h5>
+                                <h5>{{ pubYear}}</h5>
                                 <h5>Kĩ nghệ phần mềm</h5>
                                 </h5><a href="#">KNPM</a></h5>
                                 
                             </div>
+                            
                         </div>
                         </div>
                     </div>
@@ -40,10 +42,11 @@
                         <h3 id="header" style="color: lightblue;" >Thông tin phân phối</h3>
                     </div>
                     <div class="row myRow">
-                            <span class="badge badge-pill badge-success">Tổng cộng: 100</span>
+                            <span class="badge badge-pill badge-success">Tổng cộng: {{amount}}</span>
                             <span class="badge badge-pill badge-primary">Sẵn có: 95</span>
                             <span class="badge badge-pill badge-danger">Đã mượn: 5</span>
                     </div>
+                    {{/with}}
                     <div class="listBook">
                     <table class="table">
                         <thead class="thead-light">
@@ -123,25 +126,25 @@
                     <h3 id="header" style="color: lightblue;">Mượn nhiều</h3>
                     <div class="mostBorrowed">
                             <div class="card">
-                                <img class="card-img-center" src="img/Hide-24.png" alt="Card image cap">
+                                <img class="card-img-center" src="/public/img/Hide-24.png" alt="Card image cap">
                                 <div class="card-body">
                                     <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                 </div>
                             </div>
                             <div class="card">
-                                    <img class="card-img-center" src="img/Hide-24.png" alt="Card image cap">
+                                    <img class="card-img-center" src="/public/img/Hide-24.png" alt="Card image cap">
                                     <div class="card-body">
                                         <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                     </div>
                                 </div>
                                 <div class="card">
-                                        <img class="card-img-center" src="img/Hide-24.png" alt="Card image cap">
+                                        <img class="card-img-center" src="/public/img/Hide-24.png" alt="Card image cap">
                                         <div class="card-body">
                                             <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                         </div>
                                     </div>
                                     <div class="card">
-                                            <img class="card-img-center" src="img/Hide-24.png" alt="Card image cap">
+                                            <img class="card-img-center" src="/public/img/Hide-24.png" alt="Card image cap">
                                             <div class="card-body">
                                                 <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
                                     </div>

@@ -32,15 +32,21 @@ app.get('/sync', function(req, res){
 
 // Define your routes here
 // Homepage
-app.get("/", (req, res) => {
+app.get('/', (req, res) => {
 	let css = "./public/index-styles.css";
-	let bookController = require('./controllers/bookController');
-	bookController.getAll().then( data => {
+	
+	let bookController = require("./controllers/bookController");
+	bookController.getAll().then(data => {
 		res.locals.books = data.rows;
+		let categoryController = require("./controllers/categoryController");
+		return categoryController.getAll();
+	}).then(data => {
+		res.locals.categories = data.rows;
 		res.render('index', {css: css});
-	}).catch( err => {
-		next(err);
 	})
+	.catch(error => {
+		next(error);
+	});
 });
 
 // Login
@@ -71,6 +77,19 @@ app.get("/register", (req, res) => {
 app.get("/search", (req, res) => {
 	let css = "./public/css/search.css";
 	res.render('search', {css: css});
+});
+
+// View detail book
+app.get("/BookDetail/:id", (req, res) => {
+	let css = "/public/css/BookDetail.css";
+	let bookController = require("./controllers/bookController");
+	bookController.getById(req.params.id)
+	.then(book => {
+		res.locals.book = book;
+		// res.render('bookdetail', {css: css});
+		res.send(book);
+	})
+	.catch(error => next(error));
 });
 
 // MEMBER

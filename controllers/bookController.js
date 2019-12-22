@@ -22,4 +22,25 @@ controller.getAll = (query) => {
     });
 }
 
+controller.getById = (id) => {
+    return new Promise((resolve, reject) => {
+        let product;
+        Book.findOne({
+            where: {id: id},
+            include: [{ model: models.BookAuthor}]
+        }).then(result => {
+            product = result;
+            return models.Author.findAll({
+                where: {id: product.BookAuthors[0].AuthorId},
+                include: [{ model: models.Author}]
+            })
+        })
+        .then(author => {
+            product.author = author;
+            resolve(product);
+        })
+        .catch(error => reject(new Error(error)));
+    });
+}
+
 module.exports = controller;

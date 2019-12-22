@@ -200,7 +200,7 @@
                         <div class="carousel-item">
                             {{/if}}
                             <div class="col-12">
-                                <a id="news-ele" href="pages/BookDetail/{{id}}">
+                                <a id="news-ele" href="/BookDetail/{{id}}">
                                     <image class="img-fluid" src="public/img/Book.jpeg" style="width: 210px; height: 263px;"></image>
                                     <h5>{{ title }}</h5>
                                     <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
@@ -239,7 +239,7 @@
             <div class="row">
                 <div id="carouselCategories" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
-                    {{#each books}}
+                    {{#each categories}}
                     {{#if @first}}
                     <div class="carousel-item active">
                         {{else}}
@@ -247,8 +247,8 @@
                             {{/if}}
                             <div class="col-12">
                                 <a id="news-ele" href="pages/BookDetail.html">
-                                    <image class="img-fluid" src="public/img/categories.jpeg" style="width: 210px; height:263px"></image>
-                                    <h5>{{ title }}</h5>
+                                    <image class="img-fluid" src="{{image}}" style="width: 210px; height:263px"></image>
+                                    <h5>{{ name }}</h5>
                                     <p>Nulla vitae elit libero, a pharetra augue mollis interdum.</p>
                                 </a>
                             </div>
