@@ -9,34 +9,30 @@ controller.getAll = query => {
   let options = {
     where: {}
   };
-  if (query.limit > 0) {
-    options.limit = query.limit;
-    options.offset = query.limit * (query.page - 1);
+  if(query) {
+    if (query.limit > 0) {
+        options.limit = query.limit;
+        options.offset = query.limit * (query.page - 1);
+      }
+    
+      if (query.sort) {
+        switch (query.sort) {
+          case "name":
+            options.sort = [["name", "ASC"]];
+            break;
+          default:
+            options.sort = [["name", "ASC"]];
+            break;
+        }
+      }
+    
+      if (query.keyword != '' && query) {
+        options.where.title = {
+          [Op.iLike]: `%${query.keyword}%`
+        };
+      }
   }
-
-  if (query.sort) {
-    switch (query.sort) {
-      case "name":
-        options.sort = [["name", "ASC"]];
-        break;
-      case "category":
-        options.sort = [["category", "ASC"]];
-        break;
-      case "author":
-        options.sort = [["author", "ASC"]];
-        break;
-      default:
-        options.sort = [["name", "ASC"]];
-        break;
-    }
-  }
-
-  if (query.search) {
-    options.where.bookName = {
-      [Op.iLike]: `%${query.search}%`
-    };
-  }
-
+  
   return new Promise((resolve, reject) => {
     Book.findAndCountAll(options)
       .then(data => resolve(data))
@@ -85,5 +81,26 @@ controller.getAuthorId = id => {
       .catch(error => reject(new Error(error)));
   });
 };
+
+controller.getCategoriseById = id => {
+    return new Promise((resolve, reject) => {
+      let product;
+      Book.findOne({
+        where: { id: id },
+        include: [{ model: models.BookCategory }]
+      })
+        .then(result => {
+          product = result;
+          return models.Category.findAll({
+            where: { id: product.BookCategorys[0].AuthorId }
+          });
+        })
+        .then(category => {
+          product.category = category;
+          resolve(category);
+        })
+        .catch(error => reject(new Error(error)));
+    });
+  };
 
 module.exports = controller;

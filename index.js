@@ -34,15 +34,16 @@ app.get('/sync', function(req, res){
 // Homepage
 app.get('/', (req, res) => {
 	let css = "./public/index-styles.css";
-	
 	let bookController = require("./controllers/bookController");
-	bookController.getAll(req.query).then(data => {
+	bookController.getAll().then(data => {
 		res.locals.books = data.rows;
+		
 		let categoryController = require("./controllers/categoryController");
 		return categoryController.getAll();
 	}).then(data => {
 		res.locals.categories = data.rows;
 		res.render('index', {css: css});
+		console.log(res.locals.books);
 	})
 	.catch(error => {
 		next(error);
@@ -75,28 +76,60 @@ app.get("/register", (req, res) => {
 
 // Search page
 app.get("/search", (req, res) => {
+	console.log(req.query);
 	let css = "./public/css/search.css";
-	res.render('search', {css: css});
+	if(req.query.sort == null) {
+		req.query.name = 'name';
+	}
 
+	if((req.query.limit == null) || isNaN(req.query.limit)) {
+		req.query.limit = 4;
+	}
+
+	if((req.query.keyword == null) || (req.query.keyword.trim() == '')) {
+		req.query.keyword = '';
+	}
+
+	if((req.query.page == null) || isNaN(req.query.page)) {
+		req.query.page = 1;
+	}
+
+	
+	let bookController = require("./controllers/bookController");
+	bookController.getAll(req.query)
+	.then(data => {
+		res.locals.books = data.rows;
+		res.locals.pagination = {
+			page: parseInt(req.query.page),
+			limit: parseInt(req.query.limit),
+			totalRows: data.count
+		}
+		// res.send(data);
+		res.render('search', {css: css});
+	})
+	.catch(error => next(error));
+	
 });
 
 // View detail book
 app.get("/BookDetail/:id", (req, res) => {
 	let css = "/public/css/BookDetail.css";
 	let bookController = require("./controllers/bookController");
-	bookController.getById(req.params.id)
-	.then(book => {
-		res.locals.book = book;
-		return book;
+
+	bookController.getById(req.params.id).then(data => {
+		res.locals.book = data;
+		return bookController.getAuthorId(req.params.id);
+	}).then(data => {
+		res.locals.author = res.locals.book.BookAuthors[0].dataValues;
+		console.log(res.locals.author.authorName);
+		// res.send(res.locals.book);
+		// return bookController.getCategoriseById(req.params.id);
+		res.render('bookdetail', {css: css});
 	})
-	.then( (book) => {
-		bookController.getAuthorId(req.params.id).then(author => {
-			res.locals.author = author;
-			res.render('bookdetail', {css: css});
-		});
-		
-	})
-	.catch(error => next(error));
+	.catch(error => {
+		next(error);
+	});
+
 });
 // Account info
 app.get("/accountinfo", (req, res) => {

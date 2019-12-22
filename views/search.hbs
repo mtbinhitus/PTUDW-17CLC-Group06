@@ -15,7 +15,7 @@
             <div class="col-md-9 content1">
                 <h3>TRA CỨU SÁCH TRỰC TUYẾN</h3>
                 <hr>
-                <div class="form-group form-row">
+                <form class="form-group form-row" action="/search" method="GET">
                     <select class="col-md-2 form-control" id="select-search">
                         <option>Tiêu đề</option>
                         <option>Tác giả</option>
@@ -24,14 +24,16 @@
                         <option>Nhà xuất bản</option>
                         <option>Bất kỳ</option>
                     </select>
-                    <input class="col-md-7 form-control" type="text" placeholder="Tên sách">
+
+                    <input class="col-md-7 form-control" type="text" placeholder="Tên sách" name="keyword">
                     <button type="submit" class="btn btn-primary col-md-2">Tìm kiếm
                         <i class="fas fa-search" aria-hidden="true"></i>
                     </button>
                     <button class="btn btn-primary col-md-1">
                         <i class="fas fa-filter"></i>
                     </button>
-                </div>
+
+                </form>
 
                 <div class="borrow-card">
                     <label for="">Số sách được chọn: </label>
@@ -46,23 +48,25 @@
                         <tr>
                             <th scope="col">#</th>
                             <th scope="col">Tên sách</th>
-                            <th scope="col">Tác giả</th>
+                            <th scope="col">Nhà xuất bản</th>
                         </tr>
                     </thead>
                     <tbody>
                         {{#each books}}
                         <tr>
-                            <th scope="row">1</th>
-                            <td>Đã mượn</td>
-                            <td>KHMT1</td>
+                            <th scope="row">{{@index}}</th>
+                            <td> {{ title }} </td>
+                            <td> {{ publisher }} </td>
                         </tr>
                         {{/each}}
                     </tbody>
                 </table>
 
-                <nav class="nav justify-content-center" aria-label="Page navigation example" id="pagination">
-                    {{{paginate pagination paginationClass = "pagination"}}}
-                </nav>
+                <div class="row justify-content-center">
+                    <nav aria-label="Page navigation example" id="pagination">
+                        {{{ paginate pagination paginationClass="pagination"}}}
+                    </nav>
+                </div>
             </div>
             <div class="col-md-3 content2">
                 <div class="container-left">
@@ -124,3 +128,50 @@
         </div>
     </div>
 </div>
+
+<script>
+  let URLParams = new URLSearchParams(location.search)
+  let params = {
+    keyword:'',
+    type : 'bookName',
+    sort: 'bookNameASC',
+    limit: 4,
+    page: 1
+  }
+  
+  for(let key in params){
+    if(!URLParams.has(key)){
+      URLParams.append(key, params[key]);
+    }
+  }
+  $(document).ready(function() {
+    $("#sort").val(URLParams.get('sort'));
+    $("#limit").val(URLParams.get('limit'));
+    $("#keyWord").val(URLParams.get('type'));
+
+    $('#pagination li').addClass('page-item');
+    $('#pagination li a').addClass('page-link');
+    let savePage = URLParams.get('page');
+    $('#pagination li a').each((index, item)=>{
+      let page = $(item).attr('href').split('=')[1];
+      URLParams.set('page', page);
+      let href = `/search?${URLParams.toString()}`;
+      $(item).attr('href', href);
+      
+    });
+  URLParams.set('page', savePage);  
+  });
+  
+  function selectParam(key, value, reset = false){
+    console.log(location.href);
+    if(reset){
+      for( let key in params){
+        URLParams.set(key, params[key]);
+      }
+    }
+      URLParams.set(key, value);
+      let url = `/search?${URLParams.toString()}`;
+      location.href = url;
+    
+  }
+</script>
