@@ -42,6 +42,16 @@ app.get("/search", (req, res) => {
 	res.render('search', {css: css});
 });
 
+app.get("/dashboard", (req, res) => {
+	let css = "./public/css/manager-dashboard.css";
+	res.render('manager-dashboard', {css: css});
+});
+
+app.get("/information", (req, res) => {
+	let css = "./public/css/member-information.css";
+	res.render('member-information', {css: css});
+})
+
 // Set Server Port & Start Server
 app.set('port', (process.env.PORT || 3000));
 
