@@ -67,6 +67,12 @@ app.get("/search", (req, res) => {
 	res.render('search', {css: css});
 });
 
+// Account info
+app.get("/accountinfo", (req, res) => {
+	let css = "./public/css/account-info.css";
+	res.render('accountinfo', {css: css});
+})
+
 // MEMBER
 // Manage book
 app.get("membermanagebook", (req, res) => {

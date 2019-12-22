@@ -101,41 +101,61 @@
                             <div class="col-3">
                                 <h3><b>UserID:</b>
                             </div>
-                            <div class="col-9">
+                            <div class="col-8">
                                 <h3>abr342gew0</h3>
                             </div>
+                            <div class="col-1"></div>
                         </div>
                         <div class="row">
                             <div class="col-3">
                                 <h4>Họ:</h4>
                             </div>
-                            <div class="col-9">
-                                <h4>Nguyễn</h4>
+                            <div class="col-8">
+                                <input id="private-info" class="form-control" type="text" value="Nguyễn" readonly>
+                            </div>
+                            <div class="col-1">
+                                <div class="info-edit">
+                                    <input id="edit-info-btn" type="button" onclick="editInfo()">
+                                    <label for="edit-info-btn"></label>
+                                </div>
                             </div>
                         </div>
                         <div class="row">
                             <div class="col-3">
                                 <h4>Tên:</h4>
                             </div>
-                            <div class="col-9">
-                                <h4>Văn A</h4>
+                            <div class="col-8">
+                                <input id="private-info" class="form-control" type="text" value="Văn A" readonly>
                             </div>
+                            <div class="col-1"></div>
                         </div>
                         <div class="row">
                             <div class="col-3">
                                 <h4>Email:</h4>
                             </div>
-                            <div class="col-9">
-                                <h4>1111111@student.hcmus.edu.vn</h4>
+                            <div class="col-8">
+                                <input id="private-info" class="form-control" type="text" value="1111111@student.hcmus.edu.vn" readonly>
                             </div>
+                            <div class="col-1"></div>
                         </div>
                         <div class="row">
                             <div class="col-3">
                                 <h4>Trạng thái:</h4>
                             </div>
-                            <div class="col-9">
+                            <div class="col-8">
                                 <h4>Đang hoạt động</h4>
                             </div>
+                            <div class="col-1"></div>
+                        </div>
+                        <div class="row" id="group-button">
+                            <div class="col-4"></div>
+                            <div class="col-3 d-flex justify-content-center">
+                                <button type="button" class="btn btn-primary">Hủy</button>
+                            </div>
+                            <div class="col-3 d-flex justify-content-center">
+                                <button type="button" class="btn btn-primary">Sửa</button>
+                            </div>
+                            <div class="col-2"></div>
                         </div>
                     </div>
                 </div>
@@ -157,5 +177,12 @@
                 </div>
             </div>
     </footer>
+
+    <script>
+        function editInfo() {
+            $('#private-info').removeAttr('readonly');
+            $("#group-button").css("visibility", "visible");
+        }
+    </script>
 </body>
 </html>

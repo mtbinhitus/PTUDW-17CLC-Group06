@@ -32,26 +32,20 @@ a.active {
     color: gray;
 }
 
-.avatar-upload {
-    position: relative;
-    max-width: 205px;
-    margin: 50px auto;
-}
-
-.avatar-edit {
+.avatar-edit, .info-edit {
     position: absolute;
     right: 12px;
     z-index: 1;
     top: 10px;
 }
-.avatar-edit input {
+.avatar-edit input, .info-edit input {
     display: none;
 }
 
-.avatar-edit label {
+.avatar-edit label , .info-edit label{
     display: inline-block;
-    width: 34px;
-    height: 34px;
+    width: 50px;
+    height: 50px;
     margin-bottom: 0;
     border-radius: 100%;
     background: #FFFFFF;
@@ -61,13 +55,14 @@ a.active {
     font-weight: normal;
     transition: all .2s ease-in-out;
 }
-.avatar-edit label:hover {
+.avatar-edit label:hover, .info-edit label:hover {
     background: #f1f1f1;
     border-color: #d6d6d6;
 }
 
-.avatar-edit label:after {
+.avatar-edit label:after, .info-edit label:after {
     content: "\f040";
+    font-size: 23px;
     font-family: 'FontAwesome';
     color: #757575;
     position: absolute;
@@ -80,6 +75,15 @@ a.active {
 
 #info {
     padding: 8% 0;
+}
+
+#group-button {
+    visibility: hidden;
+}
+
+#private-info {
+    font-size: 20px;
+    background: white;
 }
 
 footer image {
