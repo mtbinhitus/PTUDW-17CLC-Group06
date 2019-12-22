@@ -4,19 +4,28 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
    let data = [{
     "id": 1,
-    "name": "Temple Broadis"
+    "name": "Roberta Bragg"
   }, {
     "id": 2,
-    "name": "Nickolai Annandale"
+    "name": "Mark Rhodes-Ousley"
   }, {
     "id": 3,
-    "name": "Tome Guiduzzi"
+    "name": "Keith Strassberg"
   }, {
     "id": 4,
-    "name": "Dacia Shinefield"
+    "name": "Peter S. Pacheco"
   }, {
     "id": 5,
-    "name": "Sarah Gockelen"
+    "name": "Patterson"
+  }, {
+    "id": 6,
+    "name": "Glenn Brookshear"
+  }, {
+    "id": 7,
+    "name": "Dennis Brylow"
+  }, {
+    "id": 8,
+    "name": "Ian Sommerville"
   }]
   data.map(item => {
     item.createdAt = Sequelize.literal('NOW()');
