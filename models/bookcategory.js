@@ -7,6 +7,7 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       autoIncrement: true
     },
+    categoryName: DataTypes.STRING
   }, {});
   BookCategory.associate = function(models) {
     // associations can be defined here
