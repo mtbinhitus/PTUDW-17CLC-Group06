@@ -7,7 +7,8 @@ module.exports = (sequelize, DataTypes) => {
       allowNull: false,
       autoIncrement: true
     },
-    order: DataTypes.STRING
+    order: DataTypes.STRING,
+    authorName: DataTypes.STRING
   }, {});
   BookAuthor.associate = function(models) {
     // associations can be defined here

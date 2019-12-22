@@ -10,7 +10,9 @@ module.exports = (sequelize, DataTypes) => {
     amount: DataTypes.INTEGER,
     start_date: DataTypes.DATE,
     end_date: DataTypes.DATE,
-    status: DataTypes.BOOLEAN
+    status: DataTypes.BOOLEAN,
+    bookTitle: DataTypes.STRING,
+    isbn: DataTypes.STRING
   }, {});
   Borrowed.associate = function(models) {
     // associations can be defined here
