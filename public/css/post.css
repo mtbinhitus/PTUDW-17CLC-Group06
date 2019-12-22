@@ -1,5 +1,4 @@
 body{
-    background-color: lightgrey;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
 }
 #header{
@@ -17,7 +16,7 @@ body{
     width: 12.4%;
 }
 .boxPost{
-    width: 70%;
+    width: 80%;
     height: 100%;
     margin: 0 auto;
     display: flex;
@@ -43,3 +42,11 @@ body{
     background: rgba(58, 133, 191, 0.75);
     border: 2px solid rgba(58, 133, 191, 0.75);
   }
+  hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid black;
+    margin: 1em 0;
+    padding: 0;
+}

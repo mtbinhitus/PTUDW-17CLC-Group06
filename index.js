@@ -37,20 +37,60 @@ app.get("/", (req, res) => {
     res.render('index', {css: css});
 });
 
+// Search page
 app.get("/search", (req, res) => {
 	let css = "./public/css/search.css";
 	res.render('search', {css: css});
 });
 
-app.get("/dashboard", (req, res) => {
-	let css = "./public/css/manager-dashboard.css";
-	res.render('manager-dashboard', {css: css});
+// MEMBER
+// Manage book
+app.get("membermanagebook", (req, res) => {
+	let css = "./public/css/member-manage-book.css";
+	res.render('membermanagebook', {css: css});
+});
+// Dashboard
+app.get("memberdashboard", (req, res) => {
+	let css = "./public/css/member-dashboard.css";
+	res.render('memberdashboard', {css: css});
 });
 
-app.get("/information", (req, res) => {
-	let css = "./public/css/member-information.css";
-	res.render('member-information', {css: css});
-})
+// ADMIN
+// Add author
+app.get("/addauthor", (req, res) => {
+	let css = "./public/css/add-author.css";
+	res.render('addauthor', {css: css});
+});
+
+// Add category
+app.get("/addcategory", (req, res) => {
+	let css = "./public/css/add-category.css";
+	res.render('addcategory', {css: css});
+});
+
+// Manage category
+app.get("/managecategory", (req, res) => {
+	let css = "./public/css/manage-category.css";
+	res.render('managecategory', {css: css});
+});
+
+// Manage author
+app.get("/manageauthor", (req, res) => {
+	let css = "./public/css/manage-author.css";
+	res.render('manageauthor', {css: css});
+});
+
+// Register request offline
+app.get("/registerrequestoffline", (req, res) => {
+	let css = "./public/css/register-request-offline.css";
+	res.render('registerrequestoffline', {css: css});
+});
+
+// Register request online
+app.get("/registerrequestonline", (req, res) => {
+	let css = "./public/css/register-request-online.css";
+	res.render('registerrequestonline', {css: css});
+});
 
 // Set Server Port & Start Server
 app.set('port', (process.env.PORT || 3000));
