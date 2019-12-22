@@ -9,69 +9,72 @@
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
         <link rel="stylesheet" type="text/css" href="../css/manageBorrowBook.css">
         <link rel="stylesheet" type="text/css" href="../index-styles.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     </head>
     <body>
         <header>
-            <div class="container" style="background-color:white;">
+          <div class="container">
+              <div class="row">
+                  <div class="col-12">
+                      <div class="menu-bar">
+                          <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                              <a class="navbar-brand" href="#">
+                                  <div class="container">
+                                      <div class="row">
+                                          <div class="col-5">
+                                              <image id="logo-image" src="../img/logo-fit.jpg" alt="logo">
+                                          </div>
+                                          <div class="col-7 logo-title">
+                                              <p>KHOA CÔNG NGHỆ THÔNG TIN</p>
+                                              <p>TRƯỜNG ĐẠI HỌC KHOA HỌC TỰ NHIÊN</p>
+                                              <p>THƯ VIỆN</p>
+                                          </div>
+                                      </div>
+                                  </div>
+                              </a>
+                          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+                              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                          <span class="navbar-toggler-icon"></span>
+                          </button>
+  
+                          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                            <ul class="navbar-nav mr-auto">
+                              <li class="nav-item active">
+                                  <a class="nav-link" href="#">Trang chủ <span class="sr-only">(current)</span></a>
+                              </li>
+                              <li class="nav-item">
+                                  <a class="nav-link" href="#">Dịch vụ </a>
+                              </li>
+                              <li class="nav-item">
+                                  <a class="nav-link" href="#">Tìm sách </a>
+                              </li>
+                              <li class="nav-item">
+                                  <a class="nav-link" href="#">Liên hệ </a>
+                              </li>
+                              </ul>
+                              <form class="form-inline">
+                                  <button id="username-btn" class="btn btn-default" type="button"
+                                      onclick="location.href='pages/login.html'" style="width:auto;">
+                                      <i class="fa fa-user" aria-hidden="true"></i> ĐĂNG NHẬP
+                                  </button>
+                              </form>
+                          </div>
+                          </nav>
+                      </div>
+                  </div>
+              </div>
+          </div>
+      </header>
+          <div class="page-address">
+            <div class="container">
                 <div class="row">
-                    <div class="col-1">
-                        <div class="logo">
-                            <img src="../img/logo-fit.jpg" class="rounded" alt="logo" height= "80" width="64" style="padding-top: 0.5px;">
-                        </div>
-                    </div>
-                    <div class="col-3">
-                        <div class="logo-title">
-                            <p>KHOA CÔNG NGHỆ THÔNG TIN</p>
-                            <p>TRƯỜNG ĐẠI HỌC KHOA HỌC TỰ NHIÊN</p>
-                            <p>THƯ VIỆN</p>
-                        </div>
-                    </div>
-                    <div class="col-4">
-                        <div class="menu-bar">
-                            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-                                aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                            </button>
-    
-                            <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                              <ul class="navbar-nav mr-auto">
-                                <li class="nav-item active">
-                                    <a class="nav-link" href="../index.html">Trang chủ <span class="sr-only">(current)</span></a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Dịch vụ </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Tìm sách </a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="#">Liên hệ </a>
-                                </li>
-                                </div>
-                            </nav>
-                        </div>
-                    </div>
-                    <div class="col-2"></div>
-                    <div class="col-2">
-                        <div class="login-btn">
-                            <div id="dropdown" class="dropdown">
-                            <button id="username-btn" class="btn btn-default" type="button"
-                            onclick="document.getElementById('login-form').style.display='block'" style="width:auto;">
-                                <i class="fa fa-user" aria-hidden="true"></i> ĐĂNG NHẬP
-                            </button>
-                            </div>
-                        </div>
+                    <div class="col-12">
+                        <p><i class="fa fa-home"></i> <a href="../../account-index.html"> Trang chủ \ </a>
+                        <a href="#"> Tài khoản admin \ </a> <a class="active" href="#"> Quản lý sách đã mượn</a></p>
                     </div>
                 </div>
-        </header>
-        <nav aria-label="breadcrumb">
-            <ol class="breadcrumb">
-                <li class="breadcrumb-item"><a href="../index.html">Trang chủ</a></li>
-                <li class="breadcrumb-item"><a href="#">Tài khoản admin</a></li>
-                <li class="breadcrumb-item active" aria-current="page">Quản lý sách đã mượn</li>
-            </ol>
-        </nav>
+            </div>
+        </div>
         <div class="dash">
             <button type="button" class="btn btn-primary" style="width: 12.4%;" >Dashboard</button>
             <div class="dropdown">
@@ -136,12 +139,17 @@
               </div> 
               <button type="button" class="btn btn-primary" style="width: 12.4%;" >Đổi mật khẩu</button> 
         </div>
-        <div class="container-fluid">
-            <h3 id="header">QUẢN LÝ SÁCH ĐÃ MƯỢN</h3>
+        <div class="container-fluid"style="width:80%">
+            <div class="row" style="margin: 1% auto">
+              <div class="col-12" style="padding-left:40px; padding-right:40px;">
+                  <h1>QUẢN LÝ SÁCH ĐÃ MƯỢN</h1>
+                  <hr>
+              </div>
+          </div>
             <div class="boxBook">
                 <h5 style=" border-bottom: solid rgb(228, 227, 227); color: rgb(45, 199, 250); padding: 1% 1%; background-color: rgb(178, 223, 250);">Danh sách sách đã mượn</h5>
                 <div style="padding: 1% 2%; display: flex; flex-direction: row; justify-content: center;">
-                    <div class="input-group mb-3" style="width: 70%; padding: 0 1%;">
+                    <div class="input-group mb-3" style="width: 90%; padding: 0 1%;">
                         <div class="input-group-prepend">
                           <span class="input-group-text">
                               <img src="/public/img/icons8-search-24.png" alt="search">

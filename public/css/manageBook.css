@@ -7,13 +7,23 @@
 body{
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
 }
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid black;
+    margin: 1em 0;
+    padding: 0;
+}
 #header{
     padding: 1% 2%;
     border-bottom: solid black;
     width: 100%;
 }
 .dash{
-    width: 100%;
+    
+    width: 75%;
+    margin: 0 auto;
     display: flex;
     flex-direction: row;
     justify-content: space-around;

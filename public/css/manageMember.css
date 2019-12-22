@@ -5,7 +5,6 @@
     border-color: #D5D5D5;
 }
 body{
-    background-color: lightgrey;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif !important;
 }
 #header{
@@ -14,7 +13,8 @@ body{
     width: 100%;
 }
 .dash{
-    width: 100%;
+    width: 75%;
+    margin: 0 auto;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
@@ -23,7 +23,7 @@ body{
     width: 12.4%;
 }
 .boxMember{
-    width: 90%;
+    width: 80%;
     height: 100%;
     margin: 0 auto;
     display: flex;
@@ -33,7 +33,7 @@ body{
     border: solid rgb(228, 227, 227);
 }
 .info{
-    width: 90%;
+    width: 100%;
     padding: 1% 2%;
     display: flex;
     flex-direction: column;
@@ -42,8 +42,16 @@ body{
     width: 100%;
 }
 .myRow{
-    width: 70%;
+    width: 90%;
     display: flex;
     flex-direction: row;
     justify-content: space-around;
+}
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid black;
+    margin: 1em 0;
+    padding: 0;
 }
