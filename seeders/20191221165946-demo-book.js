@@ -5,23 +5,41 @@ module.exports = {
     
     let data = [
       {
-        ISBN13: "123",
-        ISBN10: "456",
-        Title: "Khong biet gi luon huhu",
-        Edition: "1",
-        PubYear: "22/12/2019",
-        Publisher: "Trinh Binh",
-        Amount: "22"
+        isbn13: "123",
+        isbn10: "456",
+        title: "Nhap mon lap trinh",
+        edition: "1",
+        pubYear: new Date(19, 12, 22),
+        publisher: "Trinh Binh",
+        amount: 22
       },
       {
-        ISBN13: "123",
-        ISBN10: "456",
-        Title: "Khong biet gi luon huhu",
-        Edition: "1",
-        PubYear: "22/12/2019",
-        Publisher: "Trinh Binh",
-        Amount: "22"
-      }
+        isbn13: "123",
+        isbn10: "456",
+        title: "Co so du lieu",
+        edition: "1",
+        pubYear: new Date(19, 12, 22),
+        publisher: "Trinh Binh",
+        amount: 22
+      },
+      {
+        isbn13: "123",
+        isbn10: "456",
+        title: "Phat trien ung dung web",
+        edition: "1",
+        pubYear: new Date(19, 12, 22),
+        publisher: "Trinh Binh",
+        amount: 22
+      },
+      {
+        isbn13: "123",
+        isbn10: "456",
+        title: "Phat trien ung dung Java",
+        edition: "1",
+        pubYear: new Date(19, 12, 22),
+        publisher: "Trinh Binh",
+        amount: 22
+      },
     ]
     data.map(item => {
      item.createdAt = Sequelize.literal('NOW()');
