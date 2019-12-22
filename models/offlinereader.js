@@ -1,12 +1,22 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const OfflineReader = sequelize.define('OfflineReader', {
-    Email: DataTypes.STRING,
-    FName: DataTypes.STRING,
-    LName: DataTypes.STRING,
-    Faculty: DataTypes.STRING,
-    Program: DataTypes.STRING,
-    Status: DataTypes.BOOLEAN
+    id:{
+      type: DataTypes.INTEGER,
+      primaryKey: true,
+      allowNull: false,
+      autoIncrement: true
+    },
+    email: { 
+      type: DataTypes.STRING,
+      isEmail:true,
+      unique:true
+     },
+    fname: DataTypes.STRING,
+    lname: DataTypes.STRING,
+    faculty: DataTypes.STRING,
+    program: DataTypes.STRING,
+    status: DataTypes.BOOLEAN
   }, {});
   OfflineReader.associate = function(models) {
     // associations can be defined here
