@@ -86,8 +86,12 @@ app.get("/BookDetail/:id", (req, res) => {
 	bookController.getById(req.params.id)
 	.then(book => {
 		res.locals.book = book;
-		// res.render('bookdetail', {css: css});
-		res.send(book);
+		res.render('bookdetail', {css: css});
+		// res.send(book);
+		return book;
+	})
+	.then( (book) => {
+		console.log(book.BookAuthors[0].Author.name);
 	})
 	.catch(error => next(error));
 });
@@ -99,12 +103,12 @@ app.get("/accountinfo", (req, res) => {
 
 // MEMBER
 // Manage book
-app.get("membermanagebook", (req, res) => {
+app.get("/membermanagebook", (req, res) => {
 	let css = "./public/css/member-manage-book.css";
 	res.render('membermanagebook', {css: css});
 });
 // Dashboard
-app.get("memberdashboard", (req, res) => {
+app.get("/memberdashboard", (req, res) => {
 	let css = "./public/css/member-dashboard.css";
 	res.render('memberdashboard', {css: css});
 });
