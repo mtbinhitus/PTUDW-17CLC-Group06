@@ -54,6 +54,11 @@ hr {
     background: #0177DB;
 }
 
+#delete-btn {
+    color: white;
+    background: #D65049;
+}
+
 a.active {
     color: gray;
 }
