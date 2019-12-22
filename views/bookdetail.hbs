@@ -15,7 +15,6 @@
                         <div class="col-2 picBook">
                             <img src="/public/img/Book.jpeg" class="rounded" alt="This is a book" height= "250" width="200">
                         </div>
-                        {{#with book}}
                         <div class="col-9">
                             <h3 id="header" style="color: lightblue;">{{ title }}</h3>
                             <div class="detail">
@@ -27,8 +26,12 @@
                                 <h5>Ký hiệu giá sách:</h5>
                             </div>
                             <div class="info">
-                                <h5><a href="#"> Roberta Bragg </a></h5>
+                               {{#with author}}
+                                <h5><a href="#">{{author}}</a></h5>
+                                {{/with}}
+                                {{#with book}}
                                 <h5><a href="#">{{ publisher }}</a></h5>
+                                {{/with}}
                                 <h5>{{ pubYear}}</h5>
                                 <h5>Kĩ nghệ phần mềm</h5>
                                 </h5><a href="#">KNPM</a></h5>
@@ -46,7 +49,6 @@
                             <span class="badge badge-pill badge-primary">Sẵn có: 95</span>
                             <span class="badge badge-pill badge-danger">Đã mượn: 5</span>
                     </div>
-                    {{/with}}
                     <div class="listBook">
                     <table class="table">
                         <thead class="thead-light">

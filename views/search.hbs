@@ -1,13 +1,13 @@
-    <div class="page-address">
-        <div class="container">
-            <div class="row">
-                <div class="col-12">
-                    <p><i class="fa fa-home"></i> <a href="/"> Trang chủ \ </a>
+<div class="page-address">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <p><i class="fa fa-home"></i> <a href="/"> Trang chủ \ </a>
                     <a href="#"> Tìm kiếm \ </a></p>
-                </div>
             </div>
         </div>
     </div>
+</div>
 
 <div class="container-content">
     <div class="container">
@@ -50,49 +50,18 @@
                         </tr>
                     </thead>
                     <tbody>
+                        {{#each books}}
                         <tr>
                             <th scope="row">1</th>
                             <td>Đã mượn</td>
                             <td>KHMT1</td>
                         </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Sẵn có</td>
-                            <td>KHMT1</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Đã mượn</td>
-                            <td>KHMT1</td>
-                        </tr>
-                        <tr>
-                            <th scope="row">4</th>
-                            <td>Đã mượn</td>
-                            <td>KHMT1</td>
-                        </tr>
+                        {{/each}}
                     </tbody>
                 </table>
 
-                <nav>
-                    <ul class="pagination">
-                        <li class="page-item disabled">
-                            <a class="page-link" href="#" tabindex="-1" aria-label="Previous" aria-disabled="true">
-                                <span aria-hidden="true">&laquo;</span>
-                            </a>
-                        </li>
-                        <li class="page-item active" aria-current="page">
-                            <a class="page-link" href="#">1 <span class="sr-only">(current)</span></a>
-                        </li>
-                        <li class="page-item"><a class="page-link" href="#">2</a></li>
-                        <li class="page-item"><a class="page-link" href="#">3</a></li>
-                        <li class="page-item"><a class="page-link" href="#">4</a></li>
-                        <li class="page-item"><a class="page-link" href="#">5</a></li>
-                        <li class="page-item">
-                            <a class="page-link" href="#" aria-label="Next">
-                                <span aria-hidden="true">&raquo;</span>
-                            </a>
-                        </li>
-                    </ul>
+                <nav class="nav justify-content-center" aria-label="Page navigation example" id="pagination">
+                    {{{paginate pagination paginationClass = "pagination"}}}
                 </nav>
             </div>
             <div class="col-md-3 content2">

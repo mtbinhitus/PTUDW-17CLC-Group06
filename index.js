@@ -36,7 +36,7 @@ app.get('/', (req, res) => {
 	let css = "./public/index-styles.css";
 	
 	let bookController = require("./controllers/bookController");
-	bookController.getAll().then(data => {
+	bookController.getAll(req.query).then(data => {
 		res.locals.books = data.rows;
 		let categoryController = require("./controllers/categoryController");
 		return categoryController.getAll();
@@ -77,6 +77,7 @@ app.get("/register", (req, res) => {
 app.get("/search", (req, res) => {
 	let css = "./public/css/search.css";
 	res.render('search', {css: css});
+
 });
 
 // View detail book
@@ -86,12 +87,14 @@ app.get("/BookDetail/:id", (req, res) => {
 	bookController.getById(req.params.id)
 	.then(book => {
 		res.locals.book = book;
-		res.render('bookdetail', {css: css});
-		// res.send(book);
 		return book;
 	})
 	.then( (book) => {
-		console.log(book.BookAuthors[0].Author.name);
+		bookController.getAuthorId(req.params.id).then(author => {
+			res.locals.author = author;
+			res.render('bookdetail', {css: css});
+		});
+		
 	})
 	.catch(error => next(error));
 });
