@@ -80,6 +80,18 @@ app.get("/manageauthor", (req, res) => {
 	res.render('manageauthor', {css: css});
 });
 
+// Register request offline
+app.get("/registerrequestoffline", (req, res) => {
+	let css = "./public/css/register-request-offline.css";
+	res.render('registerrequestoffline', {css: css});
+});
+
+// Register request online
+app.get("/registerrequestonline", (req, res) => {
+	let css = "./public/css/register-request-online.css";
+	res.render('registerrequestonline', {css: css});
+});
+
 // Set Server Port & Start Server
 app.set('port', (process.env.PORT || 3000));
 
