@@ -16,13 +16,13 @@
                 <h3>TRA CỨU SÁCH TRỰC TUYẾN</h3>
                 <hr>
                 <form class="form-group form-row" action="/search" method="GET">
-                    <select class="col-md-2 form-control" id="select-search">
-                        <option>Tiêu đề</option>
-                        <option>Tác giả</option>
-                        <option>Chủ đề</option>
-                        <option>ISBN</option>
-                        <option>Nhà xuất bản</option>
-                        <option>Bất kỳ</option>
+                    <select class="col-md-2 form-control" id="type" onchange="selectParam('type', this.value)">
+                        <option value="title">Tiêu đề</option>
+                        <option value="author">Tác giả</option>
+                        <option value="category">Chủ đề</option>
+                        <option value="ISBN">ISBN</option>
+                        <option value="pushlisher">Nhà xuất bản</option>
+                        <option value="any">Bất kỳ</option>
                     </select>
 
                     <input class="col-md-7 form-control" type="text" placeholder="Tên sách" name="keyword">
@@ -134,7 +134,7 @@
   let params = {
     keyword:'',
     type : 'bookName',
-    sort: 'bookNameASC',
+    sort: 'titleASC',
     limit: 4,
     page: 1
   }
@@ -172,6 +172,5 @@
       URLParams.set(key, value);
       let url = `/search?${URLParams.toString()}`;
       location.href = url;
-    
   }
 </script>

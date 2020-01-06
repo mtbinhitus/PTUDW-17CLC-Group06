@@ -9,30 +9,34 @@ controller.getAll = query => {
   let options = {
     where: {}
   };
-  if(query) {
+  if (query) {
     if (query.limit > 0) {
-        options.limit = query.limit;
-        options.offset = query.limit * (query.page - 1);
+      options.limit = query.limit;
+      options.offset = query.limit * (query.page - 1);
+    }
+
+    console.log(query.sort);
+    if (query.sort) {
+      switch (query.sort) {
+        case "titleDESC":
+          options.order = [['title', 'DESC']];
+          break;
+        case "titleASC":
+          options.order = [['title', 'ASC']];
+          break;
+        default:
+          options.order = [['title', 'ASC']];
+          break;
       }
-    
-      if (query.sort) {
-        switch (query.sort) {
-          case "name":
-            options.sort = [["name", "ASC"]];
-            break;
-          default:
-            options.sort = [["name", "ASC"]];
-            break;
-        }
-      }
-    
-      if (query.keyword != '' && query) {
-        options.where.title = {
-          [Op.iLike]: `%${query.keyword}%`
-        };
-      }
+    }
+
+    if (query.keyword != "" && query) {
+      options.where.title = {
+        [Op.iLike]: `%${query.keyword}%`
+      };
+    }
   }
-  
+
   return new Promise((resolve, reject) => {
     Book.findAndCountAll(options)
       .then(data => resolve(data))
@@ -83,24 +87,24 @@ controller.getAuthorId = id => {
 };
 
 controller.getCategoriseById = id => {
-    return new Promise((resolve, reject) => {
-      let product;
-      Book.findOne({
-        where: { id: id },
-        include: [{ model: models.BookCategory }]
+  return new Promise((resolve, reject) => {
+    let product;
+    Book.findOne({
+      where: { id: id },
+      include: [{ model: models.BookCategory }]
+    })
+      .then(result => {
+        product = result;
+        return models.Category.findAll({
+          where: { id: product.BookCategorys[0].AuthorId }
+        });
       })
-        .then(result => {
-          product = result;
-          return models.Category.findAll({
-            where: { id: product.BookCategorys[0].AuthorId }
-          });
-        })
-        .then(category => {
-          product.category = category;
-          resolve(category);
-        })
-        .catch(error => reject(new Error(error)));
-    });
-  };
+      .then(category => {
+        product.category = category;
+        resolve(category);
+      })
+      .catch(error => reject(new Error(error)));
+  });
+};
 
 module.exports = controller;

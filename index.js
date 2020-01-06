@@ -78,8 +78,8 @@ app.get("/register", (req, res) => {
 app.get("/search", (req, res) => {
 	console.log(req.query);
 	let css = "./public/css/search.css";
-	if(req.query.sort == null) {
-		req.query.name = 'name';
+	if((req.query.sort == null) || (req.query.sort.trim() == '')) {
+		req.query.sort = 'titleDESC';
 	}
 
 	if((req.query.limit == null) || isNaN(req.query.limit)) {
@@ -93,7 +93,8 @@ app.get("/search", (req, res) => {
 	if((req.query.page == null) || isNaN(req.query.page)) {
 		req.query.page = 1;
 	}
-
+	
+	console.log(req.query);
 	
 	let bookController = require("./controllers/bookController");
 	bookController.getAll(req.query)

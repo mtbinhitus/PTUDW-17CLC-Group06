@@ -17,7 +17,9 @@
                         </div>
                        
                         <div class="col-9">
+                          {{#with book}}
                             <h3 id="header" style="color: lightblue;">{{ title }}</h3>
+                            {{/with}}
                             <div class="detail">
                             <div>
                                 <h5>Tác giả:</h5>
@@ -46,7 +48,9 @@
                         <h3 id="header" style="color: lightblue;" >Thông tin phân phối</h3>
                     </div>
                     <div class="row myRow">
+                      {{#with book}}
                             <span class="badge badge-pill badge-success">Tổng cộng: {{amount}}</span>
+                      {{/with}}
                             <span class="badge badge-pill badge-primary">Sẵn có: 95</span>
                             <span class="badge badge-pill badge-danger">Đã mượn: 5</span>
                     </div>
