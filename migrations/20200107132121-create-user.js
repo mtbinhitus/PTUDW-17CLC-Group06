@@ -8,8 +8,32 @@ module.exports = {
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      Pass: {
+      pass: {
         type: Sequelize.STRING
+      },
+      lname: {
+        type: Sequelize.STRING
+      },
+      fname: {
+        type: Sequelize.STRING
+      },
+      email: {
+        type: Sequelize.STRING
+      },
+      avatar: {
+        type: Sequelize.TEXT
+      },
+      isadmin: {
+        type: Sequelize.BOOLEAN
+      },
+      token: {
+        type: Sequelize.STRING
+      },
+      status: {
+        type: Sequelize.BOOLEAN
+      },
+      block: {
+        type: Sequelize.BOOLEAN
       },
       createdAt: {
         allowNull: false,

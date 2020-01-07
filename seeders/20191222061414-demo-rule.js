@@ -5,11 +5,11 @@ module.exports = {
    let data = [{
     "id": 1,
     "name": "Borrow Book",
-    "value": "2"
+    "description": "2"
   }, {
     "id": 2,
     "name": "Borrow Date",
-    "value": "30"
+    "description": "30"
   }]
   data.map(item => {
     item.createdAt = Sequelize.literal('NOW()');

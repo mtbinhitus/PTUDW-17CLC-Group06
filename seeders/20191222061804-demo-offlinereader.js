@@ -26,22 +26,6 @@ module.exports = {
     "faculty": "Tagtune",
     "program": "National University of Internal Affairs",
     "status": false
-  }, {
-    "id": 4,
-    "email": "bdoggerell3@amazonaws.com",
-    "fname": "Bjorn",
-    "lname": "Doggerell",
-    "faculty": "Zoomzone",
-    "program": "Babes-Bolyai University of Cluj-Napoca",
-    "status": true
-  }, {
-    "id": 5,
-    "email": "hipwell4@free.fr",
-    "fname": "Hartley",
-    "lname": "Ipwell",
-    "faculty": "Youopia",
-    "program": "Sabanci University",
-    "status": true
   }]
   data.map(item => {
     item.createdAt = Sequelize.literal('NOW()');

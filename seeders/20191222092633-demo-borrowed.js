@@ -5,53 +5,27 @@ module.exports = {
     let data = [{
       "id": 1,
       "amount": 1,
-      "start_date": "10/02/2017",
-      "end_date": "10/08/2018",
+      "startdate": "10/02/2017",
+      "enddate": "10/08/2018",
       "status": true,
-      "bookTitle": "Network Security - The Complete Reference",
-      "isbn": "0072226978",
       "BookId": 1,
       "UserId": 2
     }, {
       "id": 2,
       "amount": 1,
-      "start_date": "10/02/2017",
-      "end_date": "10/08/2018",
+      "startdate": "10/02/2017",
+      "enddate": "10/08/2018",
       "status": true,
-      "bookTitle": "Parallel Programming with MPI",
-      "isbn": "1558603395",
       "BookId": 2,
-      "UserId": 2
+      "UserId": 1
     }, {
       "id": 3,
       "amount": 1,
-      "start_date": "10/02/2017",
-      "end_date": "10/08/2018",
-      "status": false,
-      "bookTitle": "Network Security - The Complete Reference",
-      "isbn": "0072226978",
-      "BookId": 1,
-      "UserId": 1
-    }, {
-      "id": 4,
-      "amount": 1,
-      "start_date": "10/02/2017",
-      "end_date": "10/08/2018",
+      "startdate": "10/02/2017",
+      "enddate": "10/08/2018",
       "status": true,
-      "bookTitle": "Computer Science: An Overview",
-      "isbn": "0133760065",
-      "BookId": 4,
-      "UserId": 3
-    }, {
-      "id": 5,
-      "amount": 1,
-      "start_date": "10/02/2017",
-      "end_date": "10/08/2018",
-      "status": true,
-      "bookTitle": "Computer Organization and Design: The Hardware/Software Interface",
-      "isbn": "0123706068",
       "BookId": 3,
-      "UserId": 5
+      "UserId": 3
     }]
     data.map(item => {
       item.createdAt = Sequelize.literal('NOW()');
