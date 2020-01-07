@@ -4,17 +4,17 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     let data = [{
       "id": 1,
-      "emtpy": "",
+      "empty": "",
       "BookId": 1,
       "AuthorId": 1
     }, {
       "id": 2,
-      "emtpy": "",
+      "empty": "",
       "BookId": 3,
       "AuthorId": 1
     }, {
       "id": 3,
-      "emtpy": "",
+      "empty": "",
       "BookId": 1,
       "AuthorId": 3
     }]
