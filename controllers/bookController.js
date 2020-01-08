@@ -17,11 +17,11 @@ controller.getAll = query => {
     
       if (query.sort) {
         switch (query.sort) {
-          case "name":
-            options.sort = [["name", "ASC"]];
+          case "title":
+            options.sort = [["title", "ASC"]];
             break;
           default:
-            options.sort = [["name", "ASC"]];
+            options.sort = [["title", "ASC"]];
             break;
         }
       }

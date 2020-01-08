@@ -6,7 +6,7 @@ let Category = models.Category;
 
 controller.getAll = (query) => {
     let options = {
-        attributes: ['id', 'name', 'image',]
+        attributes: ['id', 'name', 'imgpath',]
     };
     // if(query.limit > 0)
     // {
