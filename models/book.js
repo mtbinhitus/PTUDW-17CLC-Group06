@@ -7,7 +7,9 @@ module.exports = (sequelize, DataTypes) => {
     edition: DataTypes.INTEGER,
     pubyear: DataTypes.INTEGER,
     publisher: DataTypes.STRING,
-    amount: DataTypes.INTEGER
+    amount: DataTypes.INTEGER,
+    authors: DataTypes.STRING,
+    categories: DataTypes.STRING
   }, {});
   Book.associate = function(models) {
     // associations can be defined here

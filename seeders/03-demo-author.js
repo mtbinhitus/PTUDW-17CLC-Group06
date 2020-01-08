@@ -11,6 +11,9 @@ module.exports = {
   }, {
     "id": 3,
     "name": "Keith Strassberg"
+  }, {
+    "id": 4,
+    "name": "Peter Pacheco"
   }]
   data.map(item => {
     item.createdAt = Sequelize.literal('NOW()');

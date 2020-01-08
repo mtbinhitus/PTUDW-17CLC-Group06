@@ -11,7 +11,9 @@ module.exports = {
       "edition": 1,
       "pubyear": 2004,
       "publisher": "Osborne",
-      "amount": 3
+      "amount": 3,
+      "authors": "Roberta Bragg,Keith Strassberg",
+      "categories": "Network"
     }, {
       "id": 2,
       "isbn13": "9781558603394",
@@ -20,7 +22,9 @@ module.exports = {
       "edition": 1,
       "pubyear": 1997,
       "publisher": "Morgan Kaufmann",
-      "amount": 2
+      "amount": 2,
+      "authors": "Peter Pacheco",
+      "categories": "Software Engineering"
     }, {
       "id": 3,
       "isbn13": "9780123706065",
@@ -29,7 +33,9 @@ module.exports = {
       "edition": 3,
       "pubyear": 2007,
       "publisher": "Morgan Kaufmann",
-      "amount": 1
+      "amount": 1,
+      "authors": "Roberta Bragg",
+      "categories": "Software Engineering"
     }]
     data.map(item => {
      item.createdAt = Sequelize.literal('NOW()');
