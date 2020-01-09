@@ -1,16 +1,10 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Register = sequelize.define('Register', {
-    id:{
-      type: DataTypes.INTEGER,
-      primaryKey: true,
-      allowNull: false,
-      autoIncrement: true
-    },
-    email: DataTypes.STRING,
-    password: DataTypes.STRING,
-    fname: DataTypes.STRING,
+    pass: DataTypes.STRING,
     lname: DataTypes.STRING,
+    fname: DataTypes.STRING,
+    email: DataTypes.STRING,
     status: DataTypes.BOOLEAN
   }, {});
   Register.associate = function(models) {

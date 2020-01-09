@@ -1,15 +1,21 @@
 'use strict';
 module.exports = {
   up: (queryInterface, Sequelize) => {
-    return queryInterface.createTable('BorrowedRequests', {
+    return queryInterface.createTable('Categories', {
       id: {
         allowNull: false,
         autoIncrement: true,
         primaryKey: true,
         type: Sequelize.INTEGER
       },
-      Status: {
-        type: Sequelize.BOOLEAN
+      name: {
+        type: Sequelize.STRING
+      },
+      sumary: {
+        type: Sequelize.TEXT
+      },
+      imgpath: {
+        type: Sequelize.TEXT
       },
       createdAt: {
         allowNull: false,
@@ -22,6 +28,6 @@ module.exports = {
     });
   },
   down: (queryInterface, Sequelize) => {
-    return queryInterface.dropTable('BorrowedRequests');
+    return queryInterface.dropTable('Categories');
   }
 };

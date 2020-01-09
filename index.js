@@ -32,7 +32,9 @@ app.get('/sync', function(req, res){
 
 // Define your routes here
 // Homepage
-app.get('/', (req, res) => {
+app.use('/',require('./routes/indexRouter'));
+
+/*app.get('/', (req, res) => {
 	let css = "./public/index-styles.css";
 	let bookController = require("./controllers/bookController");
 	bookController.getAll().then(data => {
@@ -48,7 +50,7 @@ app.get('/', (req, res) => {
 	.catch(error => {
 		next(error);
 	});
-});
+});*/
 
 // Login
 app.get("/login", (req, res) => {
