@@ -13,7 +13,8 @@ module.exports = {
       "publisher": "Osborne",
       "amount": 3,
       "authors": "Roberta Bragg,Keith Strassberg",
-      "categories": "Network"
+      "categories": "Network",
+      "imgpath": "http://dummyimage.com/182x226.bmp/5fa2dd/ffffff"
     }, {
       "id": 2,
       "isbn13": "9781558603394",
@@ -24,7 +25,8 @@ module.exports = {
       "publisher": "Morgan Kaufmann",
       "amount": 2,
       "authors": "Peter Pacheco",
-      "categories": "Software Engineering"
+      "categories": "Software Engineering",
+      "imgpath": "http://dummyimage.com/182x226.bmp/5fa2dd/ffffff"
     }, {
       "id": 3,
       "isbn13": "9780123706065",
@@ -35,7 +37,8 @@ module.exports = {
       "publisher": "Morgan Kaufmann",
       "amount": 1,
       "authors": "Roberta Bragg",
-      "categories": "Software Engineering"
+      "categories": "Software Engineering",
+      "imgpath": "http://dummyimage.com/182x226.bmp/5fa2dd/ffffff"
     }]
     data.map(item => {
      item.createdAt = Sequelize.literal('NOW()');

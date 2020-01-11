@@ -3,7 +3,7 @@
                   <div class="row">
                       <div class="col-12">
                           <p><i class="fa fa-home"></i> <a href="/"> Trang chủ \ </a>
-                          <a href="#"> Tìm kiếm \ </a> <a class="active" href="#"> Xem sách</a></p>
+                          <a href="/search"> Tìm kiếm \ </a> <a class="active" href="#"> Xem sách</a></p>
                       </div>
                   </div>
               </div>
@@ -13,7 +13,9 @@
                 <div class ="col-9" style="background-color: white; padding-bottom: 0.5%; border-radius: 15px; margin-left: 4%;">
                     <div class="row bookRow justify-content-around">
                         <div class="col-2 picBook">
-                            <img src="/public/img/Book.jpeg" class="rounded" alt="This is a book" height= "250" width="200">
+                           {{#with book}}
+                            <img src="{{imgpath}}" class="rounded" alt="This is a book" height= "250" width="200">
+                             {{/with}}
                         </div>
                        
                         <div class="col-9">
@@ -29,16 +31,13 @@
                                 <h5>Ký hiệu giá sách:</h5>
                             </div>
                             <div class="info">
-                             {{#with author}}
-                                <h5><a href="#"> {{ name }} </a></h5>
-                              {{/with}}
-                              {{#with book}}
-                                <h5><a href="#">{{ publisher }}</a></h5>
+                             {{#with book}}
+                                <h5> {{ authors }}</h5>
+                                <h5>{{ publisher }}</h5>
                                 <h5>{{ pubyear}}</h5>
-                              {{/with}}
-                                <h5>Kĩ nghệ phần mềm</h5>
-                                </h5><a href="#">KNPM</a></h5>
-                                
+                                <h5>{{categories}}</h5>
+                                </h5>KNPM</h5>
+                            {{/with}}
                             </div>
                             
                         </div>
@@ -50,9 +49,10 @@
                     <div class="row myRow">
                       {{#with book}}
                             <span class="badge badge-pill badge-success">Tổng cộng: {{amount}}</span>
-                      {{/with}}
-                            <span class="badge badge-pill badge-primary">Sẵn có: 95</span>
-                            <span class="badge badge-pill badge-danger">Đã mượn: 5</span>
+                     
+                            <span class="badge badge-pill badge-primary">Sẵn có: {{amount}} </span>
+                            <span class="badge badge-pill badge-danger">Đã mượn: 0 </span>
+                        {{/with}}     
                     </div>
                     
                     <div class="listBook">
@@ -165,17 +165,16 @@
                         <div class ="row">
                             <button type="button" class="btn btn-light">Tag text</button>
                             <button type="button" class="btn btn-light">Tag text</button>
-                            <button type="button" class="btn btn-light">Tag text</button>
                         </div>
                         <div class ="row">
                             <button type="button" class="btn btn-light">Tag text</button>
                             <button type="button" class="btn btn-light">Tag text</button>
-                            <button type="button" class="btn btn-light">Tag text</button>
+                      
                         </div>
                         <div class ="row">
                             <button type="button" class="btn btn-light">Tag text</button>
                             <button type="button" class="btn btn-light">Tag text</button>
-                            <button type="button" class="btn btn-light">Tag text</button>
+                           
                         </div> 
                       </div>
                 </div>
