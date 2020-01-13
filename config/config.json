@@ -1,12 +1,9 @@
 {
   "development": {
-    "username": "cinbflfofhujtb",
-    "password": "411ae48d02e3d2de457f035c7d787d186712e018cc925eea7d0744a49f895651",
-    "database": "d9dlquo31j5egt",
-    "host": "ec2-174-129-205-197.compute-1.amazonaws.com",
-    "dialect": "postgres",
-    "dialectOptions": {
-        "ssl": true
-    }
+    "username": "postgres",
+    "password": "postgre",
+    "database": "Library",
+    "host": "127.0.0.1",
+    "dialect": "postgres"
   }
 }

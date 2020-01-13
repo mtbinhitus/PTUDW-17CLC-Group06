@@ -1,24 +1,28 @@
- <div class="container-fluid">
+        <div class="container-fluid">
             <div class="row">
                 <div class="col">
                     <div class="info">
                         <h3>Đăng ký tài khoản</h3>
+                        <form class="login-form" action="/register" id="register-form" method="POST">
+                        {{#if message}}
+                        <span class="alert {{type}}">{{message}}</span>
+                        {{/if}}
                         <div>
                             <label>Tên</label>
-                            <input class="form-control" type="text" id="inputFName" placeholder="Tên" required>
+                            <input class="form-control" type="text" id="fname" name="fname" placeholder="Tên" required>
                         </div>
                         <div>
                             <label>Họ</label>
-                            <input class="form-control" type="text" id="inputLName" placeholder="Họ"required>
+                            <input class="form-control" type="text" id="lname" name="lname" placeholder="Họ"required>
                         </div>
                         <div>
                             <label>Email</label>
-                            <input class="form-control" type="text" id="inputEmail" placeholder="Email" required>
+                            <input class="form-control" type="text" id="email" name="email" placeholder="Email" required>
                         </div>
                         <div>
                             <label>Mật khẩu</label>
                             <div class="input-group">
-                                <input class="form-control" type="password" id="inputPassword" placeholder="Mật khẩu" required>
+                                <input class="form-control" type="password" id="pass" name="pass" placeholder="Mật khẩu" required>
                                 <div class="input-group-append">
                                     <button type="button" class="btn btn-outline-light"><img src="public/img/Hide-24.png" alt=""></img></button>
                                 </div>
@@ -28,9 +32,10 @@
                             Tôi đã đọc và đồng ý với<a href="#" style="color:rgb(65, 157, 250)"> Điều khoản</a>.
                         </label>
                         <div style="display: flex; flex-direction: row; justify-content:space-around;">
-                            <button type="submit" class="btn btn-primary" style="width:40%;" onclick="onClick()">Đăng ký</button>
-                            <button type="submit" class="btn btn-primary" style="width:40%;" onclick="location.href='/login'"> Đăng nhập</button>
+                            <button type="submit" class="btn btn-primary" style="width:40%;">Đăng ký</button>
+                            <button type="button" class="btn btn-primary" style="width:40%;" onclick="location.href='/login'"> Đăng nhập</button>
                         </div>
+                        </form>
                     </div>
                 </div>
                 <div class="col">

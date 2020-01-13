@@ -1,5 +1,6 @@
 console.log("Hello World!!!");
 var express = require('express');
+var bodyParser = require('body-parser');
 var app = express();
 
 // Setup static path use css and image
@@ -74,6 +75,42 @@ app.get("/forgetpassword", (req, res) => {
 app.get("/register", (req, res) => {
 	let css = "./public/css/Resigter.css";
 	res.render('register', {css: css, layout: 'layout1.hbs'});
+});
+
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
+
+app.post("/register", (req, res, next) => {
+	let user = {
+		fname: req.body.fname,
+		lname: req.body.lname,
+		email: req.body.email,
+		pass: req.body.pass,
+	};
+
+	let confirm = (req.body.remember != undefined)
+	
+	// Check existed user
+	let userController = require('./controllers/userController');
+	userController
+		.getUserByEmail(user.email)
+		.then(user => {
+			if(user) {
+				return res.render('register', {
+					message: 'Email ${user.username} exists! Please choose another email address.',
+					type: 'alert-danger'
+				});
+			}
+			return userController
+				.createRegisterUser(user)
+				.then(user => {
+					res.render('login', {
+						message: 'You have registered, now please login!',
+						type: 'alert-primary'
+					});
+				});
+		})
+		.catch(error => next(error));
 });
 
 // Search page

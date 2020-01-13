@@ -4,6 +4,7 @@
   "description": "PTUDW - Phát Triển Ứng Dụng Web -  Library Management System\r 1. Format thư mục\r <------>\r Thư mục gốc sẽ chứa:\r ```\r root:\r   |--node_modules\r   |--public\r     |--css\r       --viewbook.css\r       --login.css\r       --...\r     |--img\r       --img1.png\r       --img2.jpg\r       --...\r     |--pages\r       --viewbook.html\r       --login.html\r       --...\r     |--views\r       -- phần này dành cho templates, update sau...\r     index.html\r .gitignore\r index.js\r .....\r ```\r <------>",
   "main": "index.js",
   "dependencies": {
+    "bcryptjs": "^2.4.3",
     "body-parser": "^1.19.0",
     "express": "^4.17.1",
     "express-handlebars": "^3.1.0",
