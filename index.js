@@ -238,6 +238,11 @@ app.get("/BookDetail/:id", (req, res) => {
 // Account info
 app.get("/accountinfo", (req, res) => {
 	let css = "./public/css/account-info.css";
+	res.locals.lname = req.session.user ? req.session.user.lname : '';
+	res.locals.fname = req.session.user ? req.session.user.fname : '';
+	res.locals.uid = req.session.user ? req.session.user.id : '';
+	res.locals.block = req.session.user ? req.session.user.block : false;
+	console.log(res.locals.username);
 	res.render('accountinfo', {css: css});
 })
 
