@@ -4,20 +4,20 @@ module.exports = {
   up: (queryInterface, Sequelize) => {
     let data = [{
       "id": 1,
-      "dateget": "10/02/2017",
+      "dateget": "20/02/2020",
       "status": true,
       "BookId": 1,
       "UserId": 2
     }, {
       "id": 2,
-      "dateget": "10/02/2017",
+      "dateget": "21/02/2020",
       "status": true,
       "BookId": 2,
       "UserId": 1
     }, {
       "id": 3,
-      "dateget": "10/02/2017",
-      "status": true,
+      "dateget": "19/02/2020",
+      "status": false,
       "BookId": 3,
       "UserId": 3
     }]
