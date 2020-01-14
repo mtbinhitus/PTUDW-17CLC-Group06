@@ -43,3 +43,39 @@
             </div>
         </div>
     </div>
+
+    <span id="menu-btn" style="font-size:30px; cursor:pointer" onclick="openNav()">&#9776; Menu</span>
+
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="/manager-dashboard">Dashboard</a>
+    <a href="public/pages/change-password.html">Đổi mật khẩu</a>
+    <a href="/addcategory">Thêm chủ đề</a>
+    <a href="/managecategory">Quản lý chủ đề</a>
+    <a href="/addauthor">Thêm tác giả</a>
+    <a href="/manageauthor">Quản lý tác giả</a>
+    <a href="/add-book">Thêm sách</a>
+    <a href="/managebook">Quản lý sách</a>
+    <a href="/manageborrowbook">Quản lý sách đã mượn</a>
+    <a href="/borrow-request-online">Yêu cầu mượn sách online</a>
+    <a href="/borrow-request-offline">Yêu cầu mượn sách offline</a>
+    <a href="/registerrequestonline">Yêu cầu đăng kí tài khoản online</a>
+    <a href="/registerrequestoffline">Yêu cầu đăng kí tài khoản offline</a>
+    <a href="/configrule">Rule</a>
+    <a href="/addpost">Bài viết</a>
+    <a href="/logout">Log out</a>
+</div>
+
+<script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+        document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+        document.body.style.backgroundColor = "white";
+    }
+</script>

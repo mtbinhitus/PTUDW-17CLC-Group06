@@ -1,0 +1,156 @@
+<div class="page-address">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <p><i class="fa fa-home"></i> <a href="/"> Trang chủ \ </a>
+                    <a href="#"> Tài khoản admin \ </a> <a class="active" href="#"> Yêu cầu đăng ký online</a></p>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="content">
+    <div class="container">
+        <div class="row">
+            <div class="col-12">
+                <h1>QUẢN LÝ YÊU CẦU MƯỢN SÁCH ONLINE</h1>
+                <hr>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-1"></div>
+            <div class="col-10">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-12 title">
+                            <h5>Danh sách yêu cầu</h5>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-7"></div>
+                        <div class="col-4">
+                            <div class="form-group row">
+                                <label class="col-3 col-form-label">Search:</label>
+                                <div class="col-9">
+                                    <input type="text" class="form-control" id="inputSearch">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-1"></div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Người mượn</th>
+                                        <th scope="col">ISBN</th>
+                                        <th scope="col">Tên sách</th>
+                                        <th scope="col">Ngày gửi yêu cầu</th>
+                                        <th scope="col">Ngày có thể mượn</th>
+                                        <th scope="col">Hành động</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Nguyễn Văn A</td>
+                                        <td>2222</td>
+                                        <td>Cơ sở trí tuệ nhân tạo</td>
+                                        <td>2019-27-11</td>
+                                        <td>2020-27-01</td>
+                                        <td>
+                                            <button id="edit-btn" type="btn btn-default">Duyệt</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Nguyễn Văn A</td>
+                                        <td>2222</td>
+                                        <td>Cơ sở trí tuệ nhân tạo</td>
+                                        <td>2019-27-11</td>
+                                        <td>2020-27-01</td>
+                                        <td>
+                                            <button id="edit-btn" type="btn btn-default">Duyệt</button>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">1</th>
+                                        <td>Nguyễn Văn A</td>
+                                        <td>2222</td>
+                                        <td>Cơ sở trí tuệ nhân tạo</td>
+                                        <td>2019-27-11</td>
+                                        <td>2020-27-01</td>
+                                        <td>
+                                            <button id="edit-btn" type="btn btn-default">Duyệt</button>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-12">
+                            <nav aria-label="Page navigation example">
+                                <ul class="pagination">
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Previous">
+                                            <span aria-hidden="true">&laquo;</span>
+                                            <span class="sr-only">Previous</span>
+                                        </a>
+                                    </li>
+                                    <li class="page-item"><a class="page-link" href="#">1</a></li>
+                                    <li class="page-item">
+                                        <a class="page-link" href="#" aria-label="Next">
+                                            <span aria-hidden="true">&raquo;</span>
+                                            <span class="sr-only">Next</span>
+                                        </a>
+                                    </li>
+                                </ul>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-1"></div>
+        </div>
+    </div>
+</div>
+
+
+<span id="menu-btn" style="font-size:30px; cursor:pointer" onclick="openNav()">&#9776; Menu</span>
+
+<div id="mySidenav" class="sidenav">
+    <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+    <a href="/manager-dashboard">Dashboard</a>
+    <a href="public/pages/change-password.html">Đổi mật khẩu</a>
+    <a href="/addcategory">Thêm chủ đề</a>
+    <a href="/managecategory">Quản lý chủ đề</a>
+    <a href="/addauthor">Thêm tác giả</a>
+    <a href="/manageauthor">Quản lý tác giả</a>
+    <a href="/add-book">Thêm sách</a>
+    <a href="/managebook">Quản lý sách</a>
+    <a href="/manageborrowbook">Quản lý sách đã mượn</a>
+    <a href="/borrow-request-online">Yêu cầu mượn sách online</a>
+    <a href="/borrow-request-offline">Yêu cầu mượn sách offline</a>
+    <a href="/registerrequestonline">Yêu cầu đăng kí tài khoản online</a>
+    <a href="/registerrequestoffline">Yêu cầu đăng kí tài khoản offline</a>
+    <a href="/configrule">Rule</a>
+    <a href="/addpost">Bài viết</a>
+    <a href="/logout">Log out</a>
+</div>
+
+<script>
+    function openNav() {
+        document.getElementById("mySidenav").style.width = "250px";
+        document.getElementById("main").style.marginLeft = "250px";
+        document.body.style.backgroundColor = "rgba(0,0,0,0.4)";
+    }
+
+    function closeNav() {
+        document.getElementById("mySidenav").style.width = "0";
+        document.getElementById("main").style.marginLeft = "0";
+        document.body.style.backgroundColor = "white";
+    }
+</script>
