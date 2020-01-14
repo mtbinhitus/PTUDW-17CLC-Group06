@@ -16,12 +16,12 @@ module.exports = {
     "block": true
   }, {
     "id": 2,
-    "pass": "xBrcwpa",
-    "fname": "Albertina",
-    "lname": "Jerche",
-    "email": "ajerche1@tiny.cc",
+    "pass": "$2a$10$g67w1iEgUn7QPk/29VbAGufzk8efLeJR2YJSEkEWABbkEgvo2mIRa",
+    "fname": "Binh",
+    "lname": "Mai",
+    "email": "1753030@student.hcmus.edu.vn",
     "avatar": null,
-    "isadmin": true,
+    "isadmin": false,
     "token": null,
     "status": true,
     "block": true
