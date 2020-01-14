@@ -5,10 +5,10 @@ module.exports = {
    
    let data = [{
     "id": 1,
-    "pass": "7BLksPup",
-    "fname": "Norris",
-    "lname": "Drinkhill",
-    "email": "ndrinkhill0@addthis.com",
+    "pass": "$2a$10$g67w1iEgUn7QPk/29VbAGufzk8efLeJR2YJSEkEWABbkEgvo2mIRa",
+    "fname": "Dung",
+    "lname": "Nguyen",
+    "email": "1753021@student.hcmus.edu.vn",
     "avatar": null,
     "isadmin": false,
     "token": null,
@@ -27,10 +27,10 @@ module.exports = {
     "block": true
   }, {
     "id": 3,
-    "pass": "2PgGRkJ2z2p",
-    "fname": "Isador",
-    "lname": "Overnell",
-    "email": "iovernell2@bloglines.com",
+    "pass": "$2a$10$g67w1iEgUn7QPk/29VbAGufzk8efLeJR2YJSEkEWABbkEgvo2mIRa",
+    "fname": "Dung",
+    "lname": "Nguyen",
+    "email": "admin@gmail.com",
     "avatar": null,
     "isadmin": true,
     "token": null,

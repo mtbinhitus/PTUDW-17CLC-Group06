@@ -4,14 +4,18 @@
                     <div class="col">
                         <div class="info">
                             <h3>Đăng nhập tài khoản</h3>
+                            <form class="login-form" action="/login" id="login-form" method="POST">
+                            {{#if message}}
+                            <span class="alert {{type}}">{{message}}</span>
+                            {{/if}}
                             <div>
                                 <label>Tài khoản</label>
-                                <input class="form-control" type="text" id="inputName" placeholder="Email sinh viên, giảng viên" required>
+                                <input class="form-control" type="text" id="email" name="email" placeholder="Email sinh viên, giảng viên" required>
                             </div>
                             <div>
                                 <label>Mật khẩu</label>
                                 <div class="input-group">
-                                    <input class="form-control" type="password" id="inputPassword" placeholder="Mật khẩu" required>
+                                    <input class="form-control" type="password" id="pass" name="pass" placeholder="Mật khẩu" required>
                                     <div class="input-group-append">
                                         <button type="button" class="btn btn-outline-light"><img class="img-fluid" src="public/img/Hide-24.png" alt=""></img></button>
                                     </div>
@@ -24,11 +28,12 @@
                                     </div>
                                     <div class="col-2"></div>
                                     <div class="col-5">
-                                        <button id="login-btn" type="submit" class="btn btn-primary" onclick="onClick()">Đăng nhập</button>
+                                        <button id="login-btn" type="submit" class="btn btn-primary">Đăng nhập</button>
                                     </div>
                                 </div>
                             </div>
                             <a href="/forgetpassword">Quên mật khẩu?</a>
+                            </form>
                         </div>
                     </div>
                     <div class="col">

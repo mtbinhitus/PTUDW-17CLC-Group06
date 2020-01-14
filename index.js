@@ -1,7 +1,10 @@
 console.log("Hello World!!!");
 var express = require('express');
 var bodyParser = require('body-parser');
+var session = require('express-session');
 var app = express();
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 // Setup static path use css and image
 app.use(express.static(__dirname));
@@ -30,6 +33,23 @@ app.get('/sync', function(req, res){
 	});
 });
 
+// Session vs cart
+let userController = require('./controllers/userController');
+app.use(session({
+	cookie: {httpOnly: true, maxAge: 30 * 24 * 60 * 60 * 1000},
+	secret: 'S3cret',
+	resave: false,
+	saveUninitialized: false
+}));
+
+app.use((req, res, next) => {
+	res.locals.username = req.session.user ? req.session.user.email : '';
+	res.locals.isLoggedIn = req.session.user ? true : false;
+	res.locals.isAdmin = req.session.user? req.session.user.isadmin : false;
+	res.locals.fullname = req.session.user ? req.session.user.lname + ' ' + req.session.user.fname : '';
+	res.locals.avatar = req.session.user ? (req.session.user.avatar ? req.session.user.avatar : '/public/img/icon-user.png') : '/public/img/icon-user.png';
+	next();
+});
 
 // Define your routes here
 // Homepage
@@ -54,9 +74,51 @@ app.use('/',require('./routes/indexRouter'));
 });*/
 
 // Login
+app.post("/login", (req, res) => {
+	let email = req.body.email;
+	let pass = req.body.pass;
+	userController
+		.getUserByEmail(email)
+		.then(user => {
+			if(user) {
+				if(userController.comparePassword(pass, user.pass)) {
+					req.session.user = user;
+					res.redirect('/');
+				} else {
+					let css = "./public/css/login.css";
+					res.render('login', {
+						message: 'Incorrect password!',
+						type: 'alert-danger',
+						css: css, 
+						layout: 'layout1.hbs'
+					});
+				}
+			} else {
+				let css = "./public/css/login.css";
+				res.render('login', {
+					message: 'Email does not exist!',
+					type: 'alert-danger',
+					css: css, 
+					layout: 'layout1.hbs'
+				});
+			}
+		})
+});
+
 app.get("/login", (req, res) => {
 	let css = "./public/css/login.css";
 	res.render('login', {css: css, layout: 'layout1.hbs'});
+});
+
+// Log out
+app.get("/logout", (req, res, next) => {
+	req.session.destroy(error => {
+		if(error) {
+			return next(error)
+		} else {
+			return res.redirect('/');
+		}
+	});
 });
 
 // Change password
@@ -77,28 +139,28 @@ app.get("/register", (req, res) => {
 	res.render('register', {css: css, layout: 'layout1.hbs'});
 });
 
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
-
 app.post("/register", (req, res, next) => {
 	let user = {
-		fname: req.body.fname,
-		lname: req.body.lname,
-		email: req.body.email,
 		pass: req.body.pass,
+		lname: req.body.lname,
+		fname: req.body.fname,
+		email: req.body.email,
+		status: true
 	};
 
 	let confirm = (req.body.remember != undefined)
 	
 	// Check existed user
-	let userController = require('./controllers/userController');
 	userController
 		.getUserByEmail(user.email)
-		.then(user => {
-			if(user) {
+		.then(usr => {
+			if(usr) {
+				let css = "./public/css/Resigter.css";
 				return res.render('register', {
-					message: 'Email ${user.username} exists! Please choose another email address.',
-					type: 'alert-danger'
+					message: 'Email ${user.email} exists! Please choose another email address.',
+					type: 'alert-danger',
+					css: css, 
+					layout: 'layout1.hbs'
 				});
 			}
 			return userController
@@ -106,7 +168,9 @@ app.post("/register", (req, res, next) => {
 				.then(user => {
 					res.render('login', {
 						message: 'You have registered, now please login!',
-						type: 'alert-primary'
+						type: 'alert-primary',
+						css: "./public/css/login.css", 
+						layout: 'layout1.hbs'
 					});
 				});
 		})
@@ -224,6 +288,12 @@ app.get("/registerrequestoffline", (req, res) => {
 app.get("/registerrequestonline", (req, res) => {
 	let css = "./public/css/register-request-online.css";
 	res.render('registerrequestonline', {css: css});
+});
+
+// Manager dashboard
+app.get("/manager-dashboard", (req, res) => {
+	let css = "./public/css/manager-dashboard.css";
+	res.render('manager-dashboard', {css: css});
 });
 
 // Set Server Port & Start Server

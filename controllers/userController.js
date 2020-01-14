@@ -15,9 +15,13 @@ controller.createUser = (user) => {
 }
 
 controller.createRegisterUser = (user) => {
-    //var salt = bcrypt.genSaltSync(10);
-    //user.pass = bcrypt.hashSync(user.pass, salt);
+    var salt = bcrypt.genSaltSync(10);
+    user.pass = bcrypt.hashSync(user.pass, salt);
     return Register.create(user);
+}
+
+controller.comparePassword = (pass, hash) => {
+    return bcrypt.compareSync(pass, hash);
 }
 
 module.exports = controller;
