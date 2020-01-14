@@ -23,6 +23,13 @@ module.exports = {
     "fname": "Alex",
     "lname": "Gerbi",
     "status": true
+  }, {
+    "id": 4,
+    "email": "1753001@student.hcmus.edu.vn",
+    "pass": "$2a$10$jV8KnS7mmhUFNBsJF7AK1edR8m75h8sxl1kNEoeLnyLqPd6jZPw5W",
+    "fname": "Binh",
+    "lname": "Trinh",
+    "status": true
   }]
   data.map(item => {
     item.createdAt = Sequelize.literal('NOW()');
