@@ -296,6 +296,48 @@ app.get("/manager-dashboard", (req, res) => {
 	res.render('manager-dashboard', {css: css});
 });
 
+// Add book 
+app.get("/add-book", (req, res) => {
+	let css = "./public/css/add-book.css";
+	res.render('add-book', {css: css});
+});
+
+// Manage Book
+app.get("/managebook", (req, res) => {
+	let css = "./public/css/manageBook.css";
+	res.render('managebook', {css: css});
+});
+
+// Manage Borrow Book
+app.get("/manageborrowbook", (req, res) => {
+	let css = "./public/css/manageBorrowBook.css";
+	res.render('manageborrowbook', {css: css});
+});
+
+// Config rule
+app.get("/configrule", (req, res) => {
+	let css = "./public/css/configRule.css";
+	res.render('configrule', {css: css});
+});
+
+// Add post
+app.get("/addpost", (req, res) => {
+	let css = "./public/css/post.css";
+	res.render('addpost', {css: css});
+});
+
+// Borrow request online
+app.get("/borrow-request-online", (req, res) => {
+	let css = "./public/css/borrow-request-online.css";
+	res.render('borrow-request-online', {css: css});
+});
+
+// Borrow request offline
+app.get("/borrow-request-offline", (req, res) => {
+	let css = "./public/css/borrow-request-offline.css";
+	res.render('borrow-request-offline', {css: css});
+});
+
 // Set Server Port & Start Server
 app.set('port', (process.env.PORT || 3000));
 

@@ -1,0 +1,113 @@
+header {
+    padding: 10px 0;
+}
+
+header .container {
+    border: 2px solid black;
+}
+
+#logo-image {
+    height: 100px;
+    width: 150px;
+}
+
+header .logo-title
+{
+    padding-top: 25px;
+    text-align: center;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 5%;
+}
+
+header .menu-bar {
+    padding-top: 10px;
+}
+
+header .login-btn {
+    padding-top: 20px;
+}
+
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: 1px solid black;
+    margin: 1em 0;
+    padding: 0;
+}
+
+a.active {
+    color: gray;
+}
+
+#book-icon {
+    width: 70px;
+    height: 70px;
+    float: left;
+    margin-right: 10px;
+}
+
+.frame {
+    padding: 1%;
+    border: 3px solid blue;
+    text-align: center;
+}
+
+#menu-btn {
+    top: 1%;
+    left: 1%;
+    position: absolute;
+    color: darkblue ;
+}
+
+.sidenav {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 1;
+    top: 0;
+    left: 0;
+    background-color: #3399ff;
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+}
+  
+.sidenav a {
+    padding: 8px 8px 8px 32px;
+    text-decoration: none;
+    font-size: 25px;
+    color: darkblue;
+    display: block;
+    transition: 0.3s;
+}
+  
+.sidenav a:hover {
+    color: #f1f1f1;
+}
+  
+.sidenav .closebtn {
+    position: absolute;
+    top: 0;
+    right: 25px;
+    font-size: 36px;
+    margin-left: 50px;
+}
+
+footer image {
+    border: transparent;
+}
+
+footer .container {
+    background: #18478B;
+}
+
+footer {
+    clear: both;
+    margin-top: 30px;
+}
+
+footer h6 {
+    color: white;
+}
